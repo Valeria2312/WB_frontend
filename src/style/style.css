@@ -1,2 +1,5 @@
 @import url("global.css");
 @import url("./conponents/header.css");
+@import url("./conponents/basket.css");
+@import url("./conponents/basket-item.css");
+@import url("./conponents/basket_order.css");
