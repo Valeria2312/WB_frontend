@@ -1,7 +1,6 @@
 .basket-item{
     display: flex;
     justify-content: space-between;
-    /*max-width: 891px;*/
 }
 .basket-item-mainInformation, .basket-item-subInformation {
     display: flex;
@@ -113,6 +112,7 @@
 }
 .basket-item-addFavorite, .basket-item-delete {
     border: none;
+    background-color: var(--background-smoky);
 }
 .basket-item-price {
     text-align: right;
@@ -153,4 +153,96 @@
 }
 .strike {
     text-decoration: line-through;
+}
+
+@media screen and (width: 320px){
+    .basket-item {
+        justify-content: normal;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--rulers-rulers);
+        width: 100%;
+        gap: 14px;
+    }
+    .checkbox-inItem {
+        top: -1px;
+        left: 4px;
+    }
+    .basket-item-mainInformation {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .counter {
+        width: 82px;
+    }
+    .btn-plus {
+        margin-right: 23px;
+    }
+    .input-count {
+        width: 42px;
+    }
+    .basket-item-name {
+        max-height: 38px;
+    }
+    .basket-item-description {
+        margin-top: 16px;
+        width: 100%;
+    }
+    .basket-item-price {
+        flex-direction: row;
+        gap: 7px;
+        width: 195px;
+    }
+    .basket-item-newPrice {
+        font-size: 16px;
+        line-height: 24px;
+        padding-left: 0;
+    }
+    .basket-item-name {
+        font-size: 14px;
+        line-height: 20px;
+        width: 181px;
+        margin-top: -6px;
+    }
+    .basket-item-functions {
+        flex-direction: row;
+    }
+    .basket-item-quality {
+        /*width: 75px;*/
+    }
+    .basket-item-color{
+        width: 100%;
+    }
+    .basket-item-info {
+        width: 82px;
+    }
+    .basket-item-warehouse{
+        width: 100%;
+    }
+    .basket-item-functions {
+        gap: 28px;
+    }
+    .basket-item-opportunities {
+        padding-left: 0;
+        gap: 26px;
+        margin-top: 10px;
+        align-items: flex-end;
+    }
+    .basket-item-notification {
+        margin-top: 23px;
+        width: 88px;
+    }
+    .tree_point {
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .item4 {
+        margin-top: -3px;
+    }
+    .functions-4 {
+        padding-top: 16px;
+        gap: 35px;
+    }
+    .opportunities-4 {
+        margin-top: 21px;
+    }
 }

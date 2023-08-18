@@ -6,8 +6,9 @@
     --system-green: #0CB477;
     --system-gray: #A0A0A4;
     --background-smoky: #F6F6FA;
-    --rulers-rulers:rgba(0, 0, 0, 0.10);
+    --rulers-rulers: rgba(0, 0, 0, 0.10);
     --dark-system-coral: #FF3B30;
+    --rulers-rulers-input: rgba(0, 0, 0, 0.20);
 }
 *{
     box-sizing: border-box;
@@ -25,4 +26,6 @@
 .mt4 {
     padding-top: 4px;
 }
-
+.pt2 {
+    padding-top: 2px;
+}

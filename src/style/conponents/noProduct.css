@@ -1,0 +1,24 @@
+.basket-items-noProduct {
+    margin-top: 20px;
+
+}
+.basket-items-noProduct__checkbox {
+    display: flex;
+    padding-top: 16px;
+    border-bottom: 1px solid var(--system-gray);
+    padding-bottom: 15px;
+}
+.basket-items-noProduct__checkbox .accordion__icon {
+    margin-top: 5px;
+}
+.basket-item-noProduct{
+    color: var(--system-gray);
+    max-width: 766px;
+}
+.basket-items-noProduct-title {
+    letter-spacing: 0.2px;
+}
+.basket-items-noProduct .basket-item-description {
+    width: 309px;
+    max-width: 309px;
+}
