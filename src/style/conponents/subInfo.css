@@ -152,7 +152,11 @@
     right: 188px;
     padding-top: 3px;
 }
-
+@media screen and (width: 1024px){
+    .mark {
+        right: 10px;
+    }
+}
 @media screen and (width: 320px) {
     .delivery-method, .payment-method, .recipient{
         margin-right: -14px;
@@ -228,6 +232,9 @@
     .recipient input {
         width: 100%;
     }
-
+    .mark {
+        position: inherit;
+        right: 0;
+}
 }
 

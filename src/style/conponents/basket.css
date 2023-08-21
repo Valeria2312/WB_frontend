@@ -116,8 +116,7 @@
 }
 @media screen and (max-width: 500px){
     .basket{
-        gap: 19px;
-
+        gap: 0;
     }
     .basket-items {
         display: none;
@@ -153,20 +152,6 @@
         width: 91px;
         display: block;
     }
-    /*.accordion__icon::before{*/
-    /*    content: '−';*/
-    /*    display: block;*/
-    /*    font-size: 0;*/
-    /*    line-height: 0;*/
-    /*    border-left: 3px solid;*/
-    /*    border-bottom: 3px solid;*/
-    /*    border-color: #d3d4dd;*/
-    /*    width: 12px;*/
-    /*    height: 12px;*/
-    /*    transform: rotate(135deg);*/
-    /*    margin-top: 6px;*/
-    /*    transition: margin .3s ease,transform .3s ease;*/
-    /*}*/
     .basket-item-img {
         width: 80px;
         height: 106px;

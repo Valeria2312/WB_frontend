@@ -90,10 +90,6 @@
     width: 24px;
     height: 24px;
 }
-.btn-minus{
-}
-.btn-plus {
-}
 .input-count {
     font-size: 16px;
     font-weight: 400;
@@ -166,8 +162,6 @@
     }
     .basket-item-mainInformation {
         flex-direction: column;
-        /*gap: 12px;*/
-        /*justify-content: space-between;*/
     }
     .counter {
         width: 80px;

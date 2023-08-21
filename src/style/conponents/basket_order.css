@@ -125,9 +125,7 @@
 .paymentNow-check {
     display: flex;
 }
-
 .paymentNow-check-text {
-    /*margin-top: 3x;*/
     margin-left: -3px;
 }
 .send-order {
@@ -173,10 +171,6 @@
         background: none;
         box-shadow: none;
         padding: 0;
-        /*font-size: 20px;*/
-        /*font-weight: 700;*/
-        /*line-height: 28px;*/
-        /*letter-spacing: -0.2px;*/
     }
     .order-final {
         font-size: 20px;
@@ -196,6 +190,7 @@
     .delivery-free {
         background: var(--system-smoky-dark);
         margin-bottom: 3px;
+        padding: 8px 29px 12px 8px;
     }
     .payment {
         display: none;
