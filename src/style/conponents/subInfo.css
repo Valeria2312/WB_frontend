@@ -120,12 +120,8 @@
     border-bottom: 1px solid var(--rulers-rulers-input);;
 }
 .recipient-inputs {
-    /*display: grid;*/
-    /*!*column-gap: 10px;*!*/
-    /*grid-template-columns: repeat(3,1fr);*/
-    /*grid-template-rows: repeat(3,1fr);*/
-
-    /*width: 710px;*/
+    position: relative;
+    padding-bottom: 19px;
 }
 .recipient-inputs-1 {
     display: flex;
@@ -139,7 +135,6 @@
 .recipient-inputs-2 {
     display: flex;
     gap: 20px;
-    padding-bottom: 19px;
 }
 .recipient-inputs-2 input {
     width: 218px;
@@ -148,6 +143,14 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+}
+.mark {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    position: absolute;
+    right: 188px;
+    padding-top: 3px;
 }
 
 @media screen and (width: 320px) {

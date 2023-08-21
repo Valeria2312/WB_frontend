@@ -2,6 +2,9 @@
     margin-top: 20px;
 
 }
+.basket-items-mobile-noProduct {
+    display: none;
+}
 .basket-items-noProduct__checkbox {
     display: flex;
     padding-top: 16px;
@@ -23,6 +26,9 @@
     max-width: 309px;
 }
 @media screen and (width: 320px) {
+    .basket-items-noProduct {
+        margin-top: 11px;
+    }
     .basket-items-mobile-noProduct {
         font-size: 14px;
         font-weight: 400;
@@ -69,6 +75,7 @@
 
     .basket-items-mobile-noProduct .basket-item-opportunities {
         gap: 28px;
+        margin-top: 1px;
     }
 
     .basket-items-mobile-noProduct .basket-item-subdescription {
