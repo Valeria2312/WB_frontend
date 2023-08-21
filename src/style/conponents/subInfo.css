@@ -157,6 +157,12 @@
         right: 10px;
     }
 }
+@media screen and (max-width: 883px){
+    .recipient-inputs-2  {
+       flex-wrap: wrap;
+    }
+
+}
 @media screen and (width: 320px) {
     .delivery-method, .payment-method, .recipient{
         margin-right: -14px;

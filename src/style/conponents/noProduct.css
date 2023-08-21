@@ -25,6 +25,12 @@
     width: 309px;
     max-width: 309px;
 }
+@media screen and (max-width: 883px){
+    .basket-item-noProduct .basket-item-opportunities {
+        padding-left: 0;
+    }
+
+}
 @media screen and (width: 320px) {
     .basket-items-noProduct {
         margin-top: 11px;

@@ -114,6 +114,14 @@
         width: calc(100% - 297px - 40px);
     }
 }
+@media screen and (max-width: 874px){
+    .basket-content {
+        width: 100%;
+    }
+    .basket {
+        flex-direction: column;
+    }
+}
 @media screen and (max-width: 500px){
     .basket{
         gap: 0;
