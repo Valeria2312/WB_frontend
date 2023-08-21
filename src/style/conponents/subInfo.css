@@ -144,34 +144,87 @@
 .recipient-inputs-2 input {
     width: 218px;
 }
-
-/*.recipient-input1 {*/
-/*    grid-column: 1;*/
-/*    grid-row: 1;*/
-/*    width: 338px;*/
-/*}*/
-/*.recipient-input2 {*/
-/*    grid-column: 2;*/
-/*    grid-row: 1;*/
-/*    width: 338px;*/
-/*}*/
-/*.recipient-input3 {*/
-/*    grid-column: 1;*/
-/*    grid-row: 3;*/
-/*    width: 218px;*/
-/*}*/
-/*.recipient-input4 {*/
-/*    grid-column: 2;*/
-/*    grid-row: 3;*/
-/*    width: 218px;*/
-/*}*/
-/*.recipient-input5 {*/
-/*    grid-column: 3;*/
-/*    grid-row: 3;*/
-/*    width: 218px;*/
-/*}*/
 .recipient-inputs input {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
 }
+
+@media screen and (width: 320px) {
+    .delivery-method, .payment-method, .recipient{
+        margin-right: -14px;
+        margin-left: -14px;
+        margin-top: 20px;
+        padding: 15px 16px 24px 16px;
+        gap: 0;
+    }
+    .delivery-method-header, .payment-method-header, .recipient-header {
+        font-weight: 700;
+        margin-bottom: 18px;
+    }
+    .delivery-method-title, .payment-method-title, .recipient-title{
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: -0.2px;
+    }
+    .delivery-method-header button{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .point-issue {
+        display: block;
+        margin-bottom: 26px;
+    }
+    .point-issue-title {
+        letter-spacing: 0;
+    }
+    .point-issue-text {
+        width: 286px;
+    }
+    .cost-delivery{
+        flex-direction: column;
+        margin-bottom: 28px;
+    }
+    .delivery-date {
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 32px;
+    }
+    .delivery-free-inDeliveryMethod {
+        margin-left: 0;
+        margin-top: -5px;
+        padding: 0 25px 12px 8px;
+    }
+    .payment-method {
+        margin-top: 0;
+    }
+    .payment-method-header{
+        margin-bottom: 10px;
+    }
+    .payment-description {
+        gap: 8px;
+    }
+    .recipient {
+        margin-top: 12px;
+    }
+    .recipient-inputs {
+        display: flex;
+        flex-direction: column;
+        width: 289px;
+    }
+    .recipient-inputs-1, .recipient-inputs-2 {
+        flex-direction: column;
+        width: 100%;
+        gap: 42px;
+        margin-bottom: 0;
+    }
+    .recipient-inputs-2 {
+        margin-top: 42px;
+        gap: 50px;
+    }
+    .recipient input {
+        width: 100%;
+    }
+
+}
+

@@ -167,3 +167,40 @@
         margin-top: -24px;
     }
 }
+@media screen and (width: 320px){
+    .basket-order {
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        /*font-size: 20px;*/
+        /*font-weight: 700;*/
+        /*line-height: 28px;*/
+        /*letter-spacing: -0.2px;*/
+    }
+    .order-final {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: -0.2px;
+    }
+    .order-final-order {
+        letter-spacing: -0.2px;
+    }
+    .order-delivery-details {
+        display: none;
+    }
+    .basket-order-price {
+        margin-bottom: 17px;
+    }
+    .delivery-free {
+        background: var(--system-smoky-dark);
+        margin-bottom: 3px;
+    }
+    .payment {
+        display: none;
+    }
+    .paymentNow {
+        margin-bottom: 23px;
+    }
+}

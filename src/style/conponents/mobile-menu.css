@@ -1,0 +1,16 @@
+.mobile-menu-content {
+    display: none;
+}
+@media screen and (width: 320px){
+    .mobile-menu-content {
+        display: flex;
+        height: 56px;
+        padding: 0 13px;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+    }
+    .mobile-menu {
+        cursor: pointer;
+    }
+}
