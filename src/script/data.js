@@ -2,11 +2,12 @@
 const productData = [
     {
         productName: "Футболка UZcotton мужская",
-        img: "../../",
-        productInfo: [
-            {type: "Цвет", info: "белый"},
-            {type: "Размер", info: "56"},
-        ],
+        img: "assets/images/jpg/Photo_1.jpg",
+        imgOutStock: "assets/images/jpg/Photo_1NP.jpg",
+        productInfo:{
+            color: "белый",
+            size: 56,
+        },
         warehouse:"Коледино WB",
         companyInfo:{
             name: "ООО Вайлдберриз",
@@ -17,9 +18,11 @@ const productData = [
     },
     {
         productName: "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
-        productInfo: [
-            {type: "Цвет", info: "прозрачный"},
-        ],
+        img: "assets/images/jpg/Photo_2.jpg",
+        imgOutStock: "assets/images/jpg/Photo_2NP.jpg",
+        productInfo:{
+            color: "прозрачный",
+        },
         warehouse: "Коледино WB",
         companyInfo: {
             name: "OOO Мегапрофстиль",
@@ -30,7 +33,8 @@ const productData = [
     },
     {
         productName: `Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell `,
-        productInfo: [],
+        img: "assets/images/jpg/Photo_3.jpg",
+        imgOutStock: "assets/images/jpg/Photo_3NP.jpg",
         warehouse: "Коледино WB",
         companyInfo: {
             name: "ООО Вайлдберриз",
@@ -63,19 +67,19 @@ const deliveryData = [
 //данные о картах
 const cardData = [
     {
-        img: ".cardMir.svg",
+        img: "assets/images/svg/cardMir.svg",
         number: "1234 56•• •••• 1234",
     },
     {
-        img: ".cardVisa.svg",
+        img: "assets/images/svg/cardVisa.svg",
         number: "1234 56•• •••• 1234",
     },
     {
-        img: ".mastercard.svg",
+        img: "assets/images/svg/mastercard.svg",
         number: "1234 56•• •••• 1234",
     },
     {
-        img: ".maestro.svg",
+        img: "assets/images/svg/maestro.svg",
         number: "1234 56•• •••• 1234",
     },
 ]
