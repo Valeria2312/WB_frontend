@@ -1,4 +1,5 @@
 //данные о товарах
+
 const productData = [
     {
         productName: "Футболка UZcotton мужская",
@@ -8,6 +9,7 @@ const productData = [
             color: "белый",
             size: 56,
         },
+        quantity: 1,
         warehouse:"Коледино WB",
         companyInfo:{
             name: "ООО Вайлдберриз",
@@ -15,6 +17,13 @@ const productData = [
         discount: 529,
         inStock: 2,
         price: 1051,
+        isChecked:true,
+        plus() {
+            this.quantity++
+        },
+        minus() {
+            this.quantity--
+        }
     },
     {
         productName: "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
@@ -23,13 +32,21 @@ const productData = [
         productInfo:{
             color: "прозрачный",
         },
+        quantity: 200,
         warehouse: "Коледино WB",
         companyInfo: {
             name: "OOO Мегапрофстиль",
         },
         discount: 200000,
         inStock: 300,
-        price: 2300047,
+        price: 11500.235,
+        isChecked:true,
+        plus() {
+            this.quantity++
+        },
+        minus() {
+            this.quantity--
+        }
     },
     {
         productName: `Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell `,
@@ -39,9 +56,17 @@ const productData = [
         companyInfo: {
             name: "ООО Вайлдберриз",
         },
+        quantity: 2,
         discount: 456,
         inStock: 2,
-        price: 950,
+        price: 475,
+        isChecked:true,
+        plus() {
+            this.quantity++
+        },
+        minus() {
+            this.quantity--
+        }
     }
     ]
 
@@ -83,3 +108,4 @@ const cardData = [
         number: "1234 56•• •••• 1234",
     },
 ]
+localStorage.setItem("productData", JSON.stringify(productData))

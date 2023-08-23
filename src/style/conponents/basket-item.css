@@ -104,6 +104,14 @@
 .basket-item-addFavorite, .basket-item-delete {
     border: none;
     background-color: var(--background-smoky);
+    height: 20px;
+    width: 20px;
+}
+.basket-item-addFavorite:hover svg path {
+    fill: var(--system-magenta);
+}
+.basket-item-delete:hover svg path {
+    fill: var(--Orange);
 }
 .basket-item-price {
     text-align: right;
