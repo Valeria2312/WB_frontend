@@ -32,12 +32,12 @@ products.forEach((product) => {
                     if (e.target.alt === "плюс") {
                         console.log(dataItem)
                         counter.value++;
-                        dataItem.quantity++
+                        dataItem.quantity = counter.value
                         localStorage.setItem("productDataInBasket",JSON.stringify(dataStorage));
                         countFullPrice()
                     } if (e.target.alt === "минус") {
                         counter.value--;
-                        dataItem.quantity--
+                        dataItem.quantity = counter.value
                         localStorage.setItem("productDataInBasket",JSON.stringify(dataStorage));
                         countFullPrice()
                     }
@@ -90,3 +90,6 @@ checkboxes.forEach((item) => {
     })
 })
 
+//Checkbox на оплате с сменой текста в кнопке
+const paymentCheckbox = document.querySelector(".paymentNow-check input");
+console.log()
