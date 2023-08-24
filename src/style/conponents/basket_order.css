@@ -89,6 +89,7 @@
     font-weight: 400;
     line-height: 16px;
     margin-bottom: 25px;
+    position: relative;
 }
 .delivery-free-text {
     padding-left: 8px;
@@ -97,9 +98,31 @@
     color: var(--system-green);
     display: contents;
 }
-.payment {
-    gap: 3px;
+.delivery-free-container {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    position: absolute;
+    width: 288px;
+    padding: 10px 16px 14px 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    height: auto;
+    top: 23px;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
 }
+.price-info-container::after {
+    content: "";
+}
+.delivery-free-text:hover + .delivery-free-container {
+    visibility: visible;
+    opacity: 1;
+}
+/*.delivery-free-container {*/
+/*    gap: 3px;*/
+/*}*/
 .payment-description-text{
     font-size: 13px;
     font-weight: 400;
