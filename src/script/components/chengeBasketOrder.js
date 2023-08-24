@@ -18,7 +18,9 @@ function countFullPrice() {
     document.querySelector(".order-final-order").innerHTML = `${Number.parseInt(newFullPrice).toLocaleString('ru')} сом` ;
     document.querySelector(".order-notDiscount-order").innerHTML = `${Number.parseInt(fullPrice).toLocaleString('ru')} сом`;
     document.querySelector(".order-discount-order").innerHTML =  `${Number.parseInt(discountPrice).toLocaleString('ru')} сом` ;
-    document.querySelector(".order-notDiscount-text").innerHTML = `${productQuantity} товара`
+    document.querySelector(".order-notDiscount-text").innerHTML = `${productQuantity} товара`;
+    localStorage.setItem("newFullPrice", newFullPrice)
+    console.log(newFullPrice);
 }
 
 //каунтер
@@ -92,4 +94,13 @@ checkboxes.forEach((item) => {
 
 //Checkbox на оплате с сменой текста в кнопке
 const paymentCheckbox = document.querySelector(".paymentNow-check input");
-console.log()
+const paymentButton = document.querySelector(".send-order");
+console.log(paymentButton)
+console.log(paymentCheckbox)
+
+paymentCheckbox.addEventListener("change", function () {
+    const newFullPrice = localStorage.getItem("newFullPrice")
+    if(paymentCheckbox.checked) {
+        paymentButton.innerHTML = `Заказать ${Math.round(Number(newFullPrice)).toLocaleString('ru')} сом`
+    }
+})
