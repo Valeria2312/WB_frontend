@@ -30,7 +30,11 @@ productData.forEach((product) => {
      }
      let getFullPrice = () => {
         let fullPrice = product.price * product.quantity;
-        return ` <span class="basket-item-oldPrice strike">${fullPrice} сом</span>`
+        return ` <span class="basket-item-oldPrice strike">${fullPrice} сом</span>
+                                           <div class="price-info-container">
+                                                <div class="discountOnProduct"><div class="discountOnProduct-header">Скидка 55%</div> <div>-${product.discountOnProduct} сом</div></div>
+                                                <div class="discountPersonal"><div class="discountPersonal-header">Скидка покупателя 10%</div> <div>-${product.discountPersonal} сом</div></div>
+                                            </div>`
      }
     products += `<div class="basket-item">
                             <div class="basket-item-mainInformation">
@@ -51,7 +55,12 @@ productData.forEach((product) => {
                                         <div class="basket-item-subInfo">
                                             <p class="basket-item-provider">${product.companyInfo.name}
                                             </p>
-                                                <img class="basket-item-attention" src="assets/images/svg/attention.svg" alt="Внимание">
+                                            <img class="basket-item-attention" src="assets/images/svg/attention.svg" alt="Внимание">
+                                            <div class="company-info-container">
+                                                <div class="company-info-container-header">${product.companyInfo.name}</div>
+                                                <div>${product.companyInfo.ogrn}</div>
+                                                <div>${product.companyInfo.address} </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

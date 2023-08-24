@@ -51,19 +51,42 @@ products.forEach((product) => {
     if(check) {
         check.addEventListener("click", () => checkInput(check,product));
     }
-
 })
+
+//логика работы чекбоксов товаров
 function checkInput(check,product) {
     if(check?.checked === false) {
-        // console.log(product)
         let productCurrent =  product.querySelector(".basket-item-name").innerHTML;
-        // console.log(productCurrent)
         let dataStorage = JSON.parse(localStorage.getItem("productData"));
-        // let productItem = dataStorage.find(productItem => productItem.productName === productCurrent);
         const result = dataStorage.filter((obj) => {
             return obj.productName !== productCurrent
         })
         localStorage.setItem("productDataInBasket",JSON.stringify(result));
         countFullPrice()
-    } else {}
+    } if(check?.checked === true) {
+        let productCurrent =  product.querySelector(".basket-item-name").innerHTML;
+        let dataStorage = JSON.parse(localStorage.getItem("productDataInBasket"));
+        let initDataStorage = JSON.parse(localStorage.getItem("productData"));
+        const currentObj = initDataStorage.filter((obj) => {
+            return obj.productName === productCurrent
+        })
+        const result = dataStorage.concat(currentObj)
+        localStorage.setItem("productDataInBasket",JSON.stringify(result));
+        countFullPrice()
+    }
 }
+//логика работы AllCheckbox
+const AllCheckbox = document.querySelector("#checkbox-All");
+const checkboxes = document.querySelectorAll(".realCheckbox:not(#checkbox-All)");
+let listBoolean = [];
+
+checkboxes.forEach((item) => {
+    item.addEventListener("change", function () {
+        checkboxes.forEach((i) => {
+            listBoolean.push(i.checked)
+        });
+        AllCheckbox.checked = !listBoolean.includes(false);
+        listBoolean = [];
+    })
+})
+

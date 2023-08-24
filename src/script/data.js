@@ -13,10 +13,14 @@ const productData = [
         warehouse:"Коледино WB",
         companyInfo:{
             name: "ООО Вайлдберриз",
+            ogrn: 5167746237148,
+            address: "129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34",
         },
         discount: 529,
         inStock: 2,
         price: 1051,
+        discountOnProduct: 300,
+        discountPersonal: 30,
         isChecked:true,
         plus() {
             this.quantity++
@@ -36,10 +40,14 @@ const productData = [
         warehouse: "Коледино WB",
         companyInfo: {
             name: "OOO Мегапрофстиль",
+            ogrn: 5167746237148,
+            address: "129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34",
         },
         discount: 200000,
         inStock: 300,
         price: 11500.235,
+        discountOnProduct: 300,
+        discountPersonal: 30,
         isChecked:true,
         plus() {
             this.quantity++
@@ -55,11 +63,15 @@ const productData = [
         warehouse: "Коледино WB",
         companyInfo: {
             name: "ООО Вайлдберриз",
+            ogrn: 5167746237148,
+            address: "129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34",
         },
         quantity: 2,
         discount: 456,
         inStock: 2,
         price: 475,
+        discountOnProduct: 300,
+        discountPersonal: 30,
         isChecked:true,
         plus() {
             this.quantity++
