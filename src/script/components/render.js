@@ -1,3 +1,6 @@
+// const renderProductData = () => {
+//
+// }
 let products = '',
     productsInMobile = '',
     productsOutStock = '',

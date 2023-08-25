@@ -5,6 +5,7 @@ const productData = [
         productName: "Футболка UZcotton мужская",
         img: "assets/images/jpg/Photo_1.jpg",
         imgOutStock: "assets/images/jpg/Photo_1NP.jpg",
+        imdMini: "assets/images/jpg/Photo_1-minni.jpg",
         productInfo:{
             color: "белый",
             size: 56,
@@ -33,6 +34,7 @@ const productData = [
         productName: "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
         img: "assets/images/jpg/Photo_2.jpg",
         imgOutStock: "assets/images/jpg/Photo_2NP.jpg",
+        imdMini: "assets/images/jpg/Photo_2-mini.jpg",
         productInfo:{
             color: "прозрачный",
         },
@@ -60,6 +62,7 @@ const productData = [
         productName: `Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell `,
         img: "assets/images/jpg/Photo_3.jpg",
         imgOutStock: "assets/images/jpg/Photo_3NP.jpg",
+        imdMini: "assets/images/jpg/Photo_3-mini.jpg",
         warehouse: "Коледино WB",
         companyInfo: {
             name: "ООО Вайлдберриз",

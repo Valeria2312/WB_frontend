@@ -1,4 +1,10 @@
-const products = document.querySelectorAll(".basket-item")
+// import {renderProductData} from "./render";
+
+const products = document.querySelectorAll(".basket-items-active .basket-item")
+
+window.addEventListener('DOMContentLoaded', () => {
+    countFullPrice()
+})
 
 //функция подсчета общей суммы
 function countFullPrice() {
@@ -12,7 +18,8 @@ function countFullPrice() {
                     fullPrice += product.price * product.quantity;
                     newFullPrice += product.price * product.quantity - product.discount;
                     discountPrice -= (product.price * product.quantity) - (product.price * product.quantity - product.discount);
-                    productQuantity += product.quantity
+                    productQuantity += Number(product.quantity)
+
                 }
     })
     document.querySelector(".order-final-order").innerHTML = `${Number.parseInt(newFullPrice).toLocaleString('ru')} сом` ;
@@ -20,14 +27,15 @@ function countFullPrice() {
     document.querySelector(".order-discount-order").innerHTML =  `${Number.parseInt(discountPrice).toLocaleString('ru')} сом` ;
     document.querySelector(".order-notDiscount-text").innerHTML = `${productQuantity} товара`;
     localStorage.setItem("newFullPrice", newFullPrice)
-    console.log(newFullPrice);
 }
 
 //каунтер
 products.forEach((product) => {
+    const minus = product.querySelector(".btn-minus");
+    const plus = product.querySelector(".btn-plus");
         let counter = product.querySelector(".counter input")
         product.addEventListener('click', e => {
-            const dataItemProduct = product.querySelector(".basket-item-name").innerHTML
+            const dataItemProduct = product.querySelector(".basket-item-name").innerHTML;
             const dataStorage = JSON.parse(localStorage.getItem("productData"))
             dataStorage.forEach((dataItem) =>{
                 if(dataItem.productName === dataItemProduct) {
@@ -46,12 +54,21 @@ products.forEach((product) => {
                 }
             })
         })
+    if(counter?.value === 1) {
+        minus.setAttribute('disabled', 'disabled')
+    } else {
+        minus.disabled = false
+    }
+    // console.log(plus?.disabled);
+    //     console.log(minus)
+    // console.log(counter.value)
     })
 
 products.forEach((product) => {
     let check = product.querySelector(".realCheckbox")
     if(check) {
         check.addEventListener("click", () => checkInput(check,product));
+        check.addEventListener("change", () => addProductInDelivery(check, product))
     }
 })
 
@@ -79,7 +96,7 @@ function checkInput(check,product) {
 }
 //логика работы AllCheckbox
 const AllCheckbox = document.querySelector("#checkbox-All");
-const checkboxes = document.querySelectorAll(".realCheckbox:not(#checkbox-All)");
+const checkboxes = document.querySelectorAll(".basket-items-active .realCheckbox:not(#checkbox-All)");
 let listBoolean = [];
 
 checkboxes.forEach((item) => {
@@ -91,16 +108,65 @@ checkboxes.forEach((item) => {
         listBoolean = [];
     })
 })
+// логика отрисовки товаров в доставке
+function addProductInDelivery(check, product) {
+    let imgProductInDelivery = '';
+    let productCurrent =  product.querySelector(".basket-item-name").innerHTML;
+    let initDataStorage = JSON.parse(localStorage.getItem("productData"));
+    let fullImgProductInDelivery = document.querySelectorAll(".delivery-date img")
+    const currentObj = initDataStorage.filter((obj) => {
+        return obj.productName === productCurrent
+    })
+    const productInDelivery = currentObj.pop().imdMini;
+    fullImgProductInDelivery.forEach((img) => {
+        imgProductInDelivery = img.currentSrc.replace('http://localhost:63342/WB_frontend/','');
+        if(imgProductInDelivery === productInDelivery) {
+        if(check.checked === true) {
+                img.style.display = "block"
+            }
+         if(check.checked === false){
+                img.style.display = "none"
+            }
+    }})
+    }
+
+// const checkboxesInItem = document.querySelectorAll(".basket-items-active .realCheckbox:not(#checkbox-All)");
+// checkboxesInItem.forEach((item) => {
+//     item.addEventListener("change", function () {
+//         if(item.checked) {
+//             console.log(item)
+//         }
+//     })
+//     // console.log(item)
+// })
+
+
 
 //Checkbox на оплате с сменой текста в кнопке
 const paymentCheckbox = document.querySelector(".paymentNow-check input");
 const paymentButton = document.querySelector(".send-order");
-console.log(paymentButton)
-console.log(paymentCheckbox)
 
 paymentCheckbox.addEventListener("change", function () {
     const newFullPrice = localStorage.getItem("newFullPrice")
     if(paymentCheckbox.checked) {
-        paymentButton.innerHTML = `Заказать ${Math.round(Number(newFullPrice)).toLocaleString('ru')} сом`
+        paymentButton.innerHTML = `Оплатить ${Math.round(Number(newFullPrice)).toLocaleString('ru')} сом`
+    } else {
+        paymentButton.innerHTML = `Заказать`
     }
 })
+
+// //disabled кнопки при кол-ве 1 и макс кол-ве
+// products.forEach((product) => {
+//     const minus = product.querySelector(".btn-minus");
+//     const plus = product.querySelector(".btn-plus");
+//     const counter = product.querySelector(".counter input");
+//     console.log(minus);
+//     console.log(plus);
+//     console.log(counter.value)
+//     if(counter.value === 1) {
+//         minus.disabled = true;
+//     }
+//
+// })
+
+
