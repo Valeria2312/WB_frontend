@@ -600,23 +600,38 @@
                     <div class="payment-description"></div>
                     <span class="payment-description-subtext">Спишем оплату с карты при получении</span>
                 </div>
-                <div class="recipient">
+                <form class="recipient">
                     <div class="recipient-header">
                         <span class="recipient-title">Получатель</span>
                     </div>
                     <div class="recipient-inputs">
                         <div class="recipient-inputs-1">
-                            <input class="recipient-input recipient-input1" type="text" placeholder="Имя">
-                            <input class="recipient-input recipient-input2" type="text" placeholder="Фамилия">
+                            <div>
+                                <input class="recipient-input recipient-input1" name="first_name" type="text" placeholder="Имя">
+                                <div class='error'></div>
+                            </div>
+                            <div>
+                                <input class="recipient-input recipient-input2" name="second_name" type="text" placeholder="Фамилия">
+                                <div class='error'></div>
+                            </div>
                         </div>
                         <div class="recipient-inputs-2">
-                            <input class="recipient-input recipient-input3" type="text" placeholder="Почта">
-                            <input class="recipient-input recipient-input4" type="text" placeholder="Телефон">
-                            <input class="recipient-input recipient-input5" type="text" placeholder="ИНН">
+                            <div>
+                                <input class="recipient-input recipient-input3" name="email" type="text" placeholder="Почта">
+                                <div class='error'></div>
+                            </div>
+                            <div>
+                                <input class="recipient-input recipient-input4" name="phone" type="text" placeholder="Телефон">
+                                <div class='error'></div>
+                            </div>
+                            <div>
+                                <input class="recipient-input recipient-input5" name="inn" type="text" placeholder="ИНН">
+                                <div class='error'></div>
+                                <span class="mark">Для таможенного оформления</span>
+                            </div>
                         </div>
-                        <span class="mark">Для таможенного оформления</span>
                     </div>
-                </div>
+                </form>
             </section>
             <section class="basket-order">
                 <div class="order-final">
