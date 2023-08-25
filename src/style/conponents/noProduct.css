@@ -25,6 +25,13 @@
     width: 309px;
     max-width: 309px;
 }
+.basket-items-noProduct.closed {
+    display: none;
+}
+.basket-items-noProduct.closed .accordion__icon::before {
+    content: '+';
+    transform: rotate(-45deg);
+}
 @media screen and (max-width: 883px){
     .basket-item-noProduct .basket-item-opportunities {
         padding-left: 0;

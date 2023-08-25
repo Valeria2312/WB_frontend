@@ -23,6 +23,7 @@
 }
 .basket-items-active {
     max-width: 891px;
+    /*position: relative;*/
 }
 .basket-items__checkbox {
     display: flex;
@@ -105,7 +106,13 @@
     margin-top: 6px;
     transition: margin .3s ease,transform .3s ease;
 }
-
+.basket-items.closed {
+    display: none;
+}
+.basket-items.closed .accordion__icon::before {
+    content: '+';
+    transform: rotate(-45deg);
+}
 @media screen and (width: 1024px){
     .basket{
         justify-content: space-between;

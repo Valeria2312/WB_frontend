@@ -155,6 +155,24 @@ paymentCheckbox.addEventListener("change", function () {
     }
 })
 
+
+// аккордион
+
+// const box = document.querySelector(".basket-items-active");
+const accordion = document.querySelector(".basket-items__checkbox .accordion__icon");
+const itemsAccordion = document.querySelector(".basket-items");
+
+const accordionNoProduct = document.querySelector(".basket-items-noProduct__checkbox .accordion__icon")
+const itemsNoProduct = document.querySelector(".basket-item-noProduct");
+
+accordion.addEventListener("click", () => boxHandler(itemsAccordion));
+accordionNoProduct.addEventListener("click", () => boxHandler(itemsNoProduct));
+
+function boxHandler(items) {
+    items.classList.toggle("closed");
+}
+
+
 // //disabled кнопки при кол-ве 1 и макс кол-ве
 // products.forEach((product) => {
 //     const minus = product.querySelector(".btn-minus");
