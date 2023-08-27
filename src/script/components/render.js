@@ -214,6 +214,7 @@ costDelivery += `<span class="cost-delivery-title">Стоимость доста
 paymentDescription += `<img src="${cardData[0].img}" alt="delivery-free">
                         <span class="payment-description-text-inPaymentMethod">${cardData[0].number}<span>01/30</span></span>`;
 
+
 document.querySelector(".basket-items").innerHTML = products;
 document.querySelector(".basket-items-mobile").innerHTML = productsInMobile;
 document.querySelector(".basket-item-noProduct").innerHTML = productsOutStock;

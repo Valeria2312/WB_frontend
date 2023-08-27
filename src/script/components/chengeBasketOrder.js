@@ -1,6 +1,6 @@
 // import {renderProductData} from "./render";
 
-const products = document.querySelectorAll(".basket-items-active .basket-item")
+const products = document.querySelectorAll(".basket-items-active .basket-items .basket-item")
 
 window.addEventListener('DOMContentLoaded', () => {
     countFullPrice()
@@ -33,48 +33,47 @@ function countFullPrice() {
 products.forEach((product) => {
     const minus = product.querySelector(".btn-minus");
     const plus = product.querySelector(".btn-plus");
-        let counter = product.querySelector(".counter input")
+    let counter = product.querySelector(".counter input");
+
         product.addEventListener('click', e => {
             const dataItemProduct = product.querySelector(".basket-item-name").innerHTML;
             const dataStorage = JSON.parse(localStorage.getItem("productData"))
             dataStorage.forEach((dataItem) =>{
                 if(dataItem.productName === dataItemProduct) {
                     if (e.target.alt === "плюс") {
-                        console.log(dataItem)
                         counter.value++;
                         dataItem.quantity = counter.value
                         localStorage.setItem("productDataInBasket",JSON.stringify(dataStorage));
                         countFullPrice()
-                    } if (e.target.alt === "минус") {
-                        counter.value--;
-                        dataItem.quantity = counter.value
-                        localStorage.setItem("productDataInBasket",JSON.stringify(dataStorage));
-                        countFullPrice()
+                    } else {
+                        if(counter.value === "1") {
+                            minus.disabled = true;
+                        } else {
+                            counter.value--;
+                            dataItem.quantity = counter.value
+                            localStorage.setItem("productDataInBasket",JSON.stringify(dataStorage));
+                            countFullPrice()
+                        }
                     }
                 }
             })
         })
-    if(counter?.value === 1) {
-        minus.setAttribute('disabled', 'disabled')
-    } else {
-        minus.disabled = false
-    }
-    // console.log(plus?.disabled);
-    //     console.log(minus)
-    // console.log(counter.value)
+
     })
 
 products.forEach((product) => {
-    let check = product.querySelector(".realCheckbox")
+    let check = product.querySelector(".checkbox-custom")
     if(check) {
         check.addEventListener("click", () => checkInput(check,product));
-        check.addEventListener("change", () => addProductInDelivery(check, product))
+        check.addEventListener("click", () => addProductInDelivery(check, product))
     }
 })
 
 //логика работы чекбоксов товаров
 function checkInput(check,product) {
-    if(check?.checked === false) {
+    const currentChack = check.querySelector("input");
+    if(currentChack?.checked === false) {
+        currentChack.checked = true;
         let productCurrent =  product.querySelector(".basket-item-name").innerHTML;
         let dataStorage = JSON.parse(localStorage.getItem("productData"));
         const result = dataStorage.filter((obj) => {
@@ -82,7 +81,8 @@ function checkInput(check,product) {
         })
         localStorage.setItem("productDataInBasket",JSON.stringify(result));
         countFullPrice()
-    } if(check?.checked === true) {
+    } else {
+        currentChack.checked = false;
         let productCurrent =  product.querySelector(".basket-item-name").innerHTML;
         let dataStorage = JSON.parse(localStorage.getItem("productDataInBasket"));
         let initDataStorage = JSON.parse(localStorage.getItem("productData"));
@@ -94,15 +94,16 @@ function checkInput(check,product) {
         countFullPrice()
     }
 }
+
 //логика работы AllCheckbox
 const AllCheckbox = document.querySelector("#checkbox-All");
-const checkboxes = document.querySelectorAll(".basket-items-active .realCheckbox:not(#checkbox-All)");
+const checkboxes = document.querySelectorAll(".basket-items-active .checkbox-custom:not(.checkbox-all__container)");
 let listBoolean = [];
-
 checkboxes.forEach((item) => {
-    item.addEventListener("change", function () {
+    item.addEventListener("click", () => {
         checkboxes.forEach((i) => {
-            listBoolean.push(i.checked)
+           const currentItem = i.querySelector("input")
+            listBoolean.push(currentItem.checked)
         });
         AllCheckbox.checked = !listBoolean.includes(false);
         listBoolean = [];
@@ -112,35 +113,25 @@ checkboxes.forEach((item) => {
 function addProductInDelivery(check, product) {
     let imgProductInDelivery = '';
     let productCurrent =  product.querySelector(".basket-item-name").innerHTML;
+    const currentCheck = check.querySelector("input");
     let initDataStorage = JSON.parse(localStorage.getItem("productData"));
     let fullImgProductInDelivery = document.querySelectorAll(".delivery-date img")
     const currentObj = initDataStorage.filter((obj) => {
         return obj.productName === productCurrent
     })
     const productInDelivery = currentObj.pop().imdMini;
+
     fullImgProductInDelivery.forEach((img) => {
         imgProductInDelivery = img.currentSrc.replace('http://localhost:63342/WB_frontend/','');
         if(imgProductInDelivery === productInDelivery) {
-        if(check.checked === true) {
+        if(currentCheck.checked === true) {
                 img.style.display = "block"
             }
-         if(check.checked === false){
+         if(currentCheck.checked === false){
                 img.style.display = "none"
             }
     }})
     }
-
-// const checkboxesInItem = document.querySelectorAll(".basket-items-active .realCheckbox:not(#checkbox-All)");
-// checkboxesInItem.forEach((item) => {
-//     item.addEventListener("change", function () {
-//         if(item.checked) {
-//             console.log(item)
-//         }
-//     })
-//     // console.log(item)
-// })
-
-
 
 //Checkbox на оплате с сменой текста в кнопке
 const paymentCheckbox = document.querySelector(".paymentNow-check input");

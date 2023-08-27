@@ -94,7 +94,8 @@ const deliveryData = [
         shippingCost: "Бесплатно",
     },
     {
-        address: "Бишкек, улица Табышалиева, 57"
+        address: "Бишкек, улица Табышалиева, 57",
+        rating: 4.99,
     },
     {
         address: "Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1",
@@ -109,18 +110,22 @@ const cardData = [
     {
         img: "assets/images/svg/cardMir.svg",
         number: "1234 56•• •••• 1234",
+        discription: "Мир"
     },
     {
         img: "assets/images/svg/cardVisa.svg",
         number: "1234 56•• •••• 1234",
+        discription: "Виза"
     },
     {
         img: "assets/images/svg/mastercard.svg",
         number: "1234 56•• •••• 1234",
+        discription: "Мастеркард"
     },
     {
         img: "assets/images/svg/maestro.svg",
         number: "1234 56•• •••• 1234",
+        discription: "Маестро"
     },
 ]
 localStorage.setItem("productData", JSON.stringify(productData))
