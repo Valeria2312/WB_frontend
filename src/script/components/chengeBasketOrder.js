@@ -41,11 +41,13 @@ products.forEach((product) => {
             dataStorage.forEach((dataItem) =>{
                 if(dataItem.productName === dataItemProduct) {
                     if (e.target.alt === "плюс") {
+                        e.stopPropagation();
                         counter.value++;
                         dataItem.quantity = counter.value
                         localStorage.setItem("productData",JSON.stringify(dataStorage));
                         countFullPrice()
-                    } else {
+                    } if(e.target.alt === "минус") {
+                        e.stopPropagation();
                         if(counter.value === "1") {
                             minus.disabled = true;
                         } else {

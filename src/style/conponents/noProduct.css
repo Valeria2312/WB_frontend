@@ -16,7 +16,7 @@
 .basket-items-noProduct__checkbox {
     display: flex;
     padding-top: 16px;
-    border-bottom: 1px solid var(--system-gray);
+    border-bottom: 1px solid var(--rulers-rulers);
     padding-bottom: 15px;
 }
 .basket-items-noProduct__checkbox .accordion__icon {

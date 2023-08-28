@@ -192,6 +192,11 @@
         margin-top: -24px;
     }
 }
+@media screen and (max-width: 1022px){
+    .basket-order {
+        max-width: 600px;
+    }
+}
 @media screen and (width: 320px){
     .basket-order {
         border-radius: 0;
