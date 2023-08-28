@@ -46,7 +46,6 @@ const productData = [
             address: "129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34",
         },
         discount: 200000,
-        inStock: 300,
         price: 11500.235,
         discountOnProduct: 300,
         discountPersonal: 30,
@@ -63,6 +62,7 @@ const productData = [
         img: "assets/images/jpg/Photo_3.jpg",
         imgOutStock: "assets/images/jpg/Photo_3NP.jpg",
         imdMini: "assets/images/jpg/Photo_3-mini.jpg",
+        productInfo:{},
         warehouse: "Коледино WB",
         companyInfo: {
             name: "ООО Вайлдберриз",
@@ -77,6 +77,8 @@ const productData = [
         discountPersonal: 30,
         isChecked:true,
         mt:true,
+        openCheck: true,
+        openSize: "56/54/52",
         plus() {
             this.quantity++
         },

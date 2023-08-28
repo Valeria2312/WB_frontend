@@ -13,4 +13,11 @@
     .mobile-menu {
         cursor: pointer;
     }
+   .mobile-menu-content .menu-basket-counter {
+       right: 141px;
+       text-align: center;
+       font-size: 10px;
+       font-weight: 700;
+       line-height: 18px;
+    }
 }

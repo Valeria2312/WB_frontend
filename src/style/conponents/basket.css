@@ -150,6 +150,9 @@
     .basket {
         flex-direction: column;
     }
+    .basket-items-mobile .basket-item {
+        display: flex;
+    }
 }
 @media screen and (max-width: 500px){
     .basket{
@@ -186,17 +189,37 @@
         cursor: pointer;
     }
     .checkbox-text {
-        width: 91px;
+        width: 123px;
         display: block;
+        padding-left: 32px;
+        position: absolute;
+        top: 117px;
     }
     .basket-item-img {
-        width: 80px;
-        height: 106px;
-        margin-bottom: 24px;
+        /*width: 80px;*/
+        /*height: 106px;*/
+        /*margin-bottom: 24px;*/
+        /*width: 28px;*/
+        /*height: 106px;*/
+
     }
-    .basket-item-photo, .basket-item-photo img {
-        width: 100%;
-        height: 100%;
-        margin-top: -4px;
+    .basket-items-mobile .basket-item-photo {
+        /*width: 100%;*/
+        /*height: 100%;*/
+        margin-left: 0;
+        /*width: 28px;*/
+        /*height: 106px;*/
+    }
+    .basket-items-mobile .basket-item-photo img {
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*margin-top: -4px;*/
+        /*margin-top: 7px;*/
+        margin-left: 0;
+
+        /*width: 100%;*/
+        /*height: 100%;*/
+        width: 80px;
+        height: auto;
     }
 }

@@ -85,6 +85,16 @@
     margin-left: -8px;
     padding-bottom: 0;
 }
+.delivery-date-productImg-item {
+    position: relative;
+}
+.delivery-date-productImg-item .menu-basket-counter {
+    right: 0;
+    top: -8px;
+}
+.delivery-date-productImg-item-2 .menu-basket-counter {
+    width: 24px;
+}
 
 .payment-method {
     display: flex;
@@ -197,7 +207,7 @@
     .delivery-method, .payment-method, .recipient{
         margin-right: -14px;
         margin-left: -14px;
-        margin-top: 20px;
+        margin-top: 13px;
         padding: 15px 16px 24px 16px;
         gap: 0;
     }
@@ -231,7 +241,7 @@
     .delivery-date {
         flex-direction: column;
         gap: 18px;
-        margin-bottom: 32px;
+        margin-bottom: 28px;
     }
     .delivery-free-inDeliveryMethod {
         margin-left: 0;
@@ -241,6 +251,11 @@
     .payment-method {
         margin-top: 0;
     }
+    .payment-description {
+        margin-bottom: 6px;
+        margin-top: 0;
+    }
+
     .payment-method-header{
         margin-bottom: 10px;
     }
@@ -258,11 +273,12 @@
     .recipient-inputs-1, .recipient-inputs-2 {
         flex-direction: column;
         width: 100%;
-        gap: 42px;
+        gap: 50px;
         margin-bottom: 0;
+        margin-top: 3px;
     }
     .recipient-inputs-2 {
-        margin-top: 42px;
+        margin-top: 51px;
         gap: 50px;
     }
     .recipient input {

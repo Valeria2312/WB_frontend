@@ -231,17 +231,69 @@
 @media screen and (width: 320px){
     .basket-item {
         justify-content: normal;
-        padding-bottom: 18px;
+        padding-bottom: 21px;
         border-bottom: 1px solid var(--rulers-rulers);
         width: 100%;
-        gap: 14px;
+        gap: 6px;
     }
+    .basket-items-mobile-noProduct .basket-item {
+        padding-bottom: 21px;
+    }
+
     .checkbox-inItem {
-        top: -1px;
+        /*top: -1px;*/
         left: 4px;
+        top: 15px;
+        top: 3px;
+    }
+    .basket-items-active .basket-items-mobile .basket-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .basket-items-active .basket-items-mobile .basket-item-description {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        gap: 5px;
+        justify-content: space-between;
+    }
+    .basket-item-size-mobile, .basket-item-size-mobile-more, .basket-item-openCheck {
+        position: absolute;
+        /*top: 93px;*/
+        top: 81px;
+        left: 6px;
+        width: 22px;
+        height: 22px;
+        padding: 0px 4px 3px 0px;
+        background: white;
+        border-radius: 6px;
+    }
+    .basket-item-size-mobile-more {
+        width: 67px;
+    }
+
+    .basket-item-openCheck {
+        position: absolute;
+        top: 2px;
+        left: 3px;
+    }
+    .basket-item-size-mobile-none {
+        display: none;
     }
     .basket-item-mainInformation {
         flex-direction: column;
+
+        display: flex;
+        flex-direction: row;
+        margin-top: 12px;
+        /*gap: 17px;*/
+    }
+    .main-info {
+        margin-top: 6px;
+    }
+    .basket-item-quality {
+        margin-top: 7px;
+        margin-bottom: 7px;
     }
     .counter {
         width: 80px;
@@ -263,7 +315,7 @@
     .basket-item-price {
         flex-direction: row;
         gap: 7px;
-        width: 195px;
+        width: 198px;
     }
     .basket-item-newPrice {
         font-size: 16px;
@@ -274,7 +326,7 @@
         font-size: 14px;
         line-height: 20px;
         width: 181px;
-        margin-top: -6px;
+    display: flex;
     }
     .basket-item-functions {
         flex-direction: row;
@@ -292,19 +344,21 @@
         width: 100%;
     }
     .basket-item-functions {
+        margin-left: 12px;
         gap: 28px;
+        margin-top: 6px;
     }
     .basket-item-opportunities {
         padding-left: 0;
         gap: 26px;
-        margin-top: 22px;
-        align-items: flex-end;
+        /*margin-top: 22px;*/
+        /*align-items: flex-end;*/
     }
     .item-2 {
         margin-top: 8px;
     }
     .basket-item-notification {
-        margin-top: 23px;
+        /*margin-top: 23px;*/
         width: 88px;
     }
     .tree_point {

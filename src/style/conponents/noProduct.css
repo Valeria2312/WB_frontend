@@ -44,7 +44,7 @@
 }
 @media screen and (width: 320px) {
     .basket-items-noProduct {
-        margin-top: 11px;
+        margin-top: 7px;
     }
     .basket-items-mobile-noProduct {
         font-size: 14px;
@@ -53,12 +53,17 @@
         color: var(--system-gray);
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        /*gap: 6px;*/
     }
-
+    .basket-items-mobile-noProduct .basket-item-description {
+        position: relative;
+    }
     .basket-items-mobile-noProduct .basket-item {
         flex-direction: column;
         gap: 5px;
+    }
+    .basket-items-mobile-noProduct .basket-item-opportunities {
+        margin-right: -11px;
     }
 
     .basket-items-mobile-noProduct .basket-item-quality {
