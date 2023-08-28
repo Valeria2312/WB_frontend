@@ -1,7 +1,6 @@
 .basket-items-noProduct {
     margin-top: 17px;
-    /*width: calc(100% - 44px);*/
-    width: calc(100% - -4px);
+    max-width: 892px;
 }
 .basket-items-noProduct .basket-item-photo {
     margin-left: 0;
