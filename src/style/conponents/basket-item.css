@@ -76,6 +76,7 @@
     gap: 8px;
     visibility: hidden;
     opacity: 0;
+    z-index: 3;
 }
 .price-info-container {
     top: 54px;
@@ -151,6 +152,7 @@
 .counter button {
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 .btn-minus img {
     margin-bottom: 2px;
@@ -171,12 +173,20 @@
     background-color: var(--background-smoky);
     height: 20px;
     width: 20px;
+    cursor: pointer;
 }
 .basket-item-addFavorite:hover svg path {
     fill: var(--system-magenta);
 }
 .basket-item-delete:hover svg path {
     fill: var(--Orange);
+}
+.basket-item-noProduct .basket-item-addFavorite, .basket-item-delete{
+    border: none;
+    background-color: var(--background-smoky);
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
 }
 .basket-item-price {
     text-align: right;

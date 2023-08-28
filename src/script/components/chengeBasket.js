@@ -38,13 +38,16 @@ products.forEach((product) => {
             const dataStorage = JSON.parse(localStorage.getItem("productData"))
             dataStorage.forEach((dataItem) =>{
                 if(dataItem.productName === dataItemProduct) {
-                    if (e.target.alt === "плюс") {
+                    if (e.target.parentElement === plus) {
                         e.stopPropagation();
-                        counter.value++;
-                        dataItem.quantity = counter.value
-                        localStorage.setItem("productData",JSON.stringify(dataStorage));
-                        countFullPrice()
-                    } if(e.target.alt === "минус") {
+                        if(counter.value === dataItem.inStock?.toString()) {
+                            plus.disabled = true;
+                        } else {
+                            counter.value++;
+                            dataItem.quantity = counter.value
+                            localStorage.setItem("productData",JSON.stringify(dataStorage));
+                            countFullPrice()}
+                    } if(e.target.parentElement === minus) {
                         e.stopPropagation();
                         if(counter.value === "1") {
                             minus.disabled = true;
