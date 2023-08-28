@@ -5,11 +5,16 @@
 .basket-item-mainInformation, .basket-item-subInformation {
     display: flex;
 }
+.basket-item-mainInformation {
+    position: relative;
+}
 .checkbox-inItem {
     top: 36px;
+    position: absolute;
 }
 .basket-item-photo {
     margin-right: 17px;
+    margin-left: 33px;
 }
 .basket-item-description {
     display: flex;
@@ -126,7 +131,9 @@
     background-color: var(--white);
     justify-content: center;
     border-radius: 8px;
-    padding: 8px 2px 12px 2px;
+    /*padding: 8px 2px 12px 2px;*/
+
+    padding: 10px 2px 12px 2px;
 }
 .counter input, .counter button{
     border: none;
@@ -134,8 +141,12 @@
     text-align: center;
 }
 .counter input {
-    width: 44px;
+    /*width: 44px;*/
+    /*height: 23px;*/
+
+    width: 49px;
     height: 23px;
+    padding-left: 9px;
 }
 .counter button {
     width: 24px;

@@ -76,6 +76,7 @@ const productData = [
         discountOnProduct: 300,
         discountPersonal: 30,
         isChecked:true,
+        mt:true,
         plus() {
             this.quantity++
         },

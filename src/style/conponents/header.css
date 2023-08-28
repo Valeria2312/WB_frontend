@@ -80,15 +80,11 @@
 .menu-profile, .menu-basket {
     font-size: 14px;
     line-height: 20px;
-    /*color: rgba(255,255,255,.6);*/
     text-decoration: none;
     display: block;
     cursor: pointer;
     transition: color .3s ease 0s;
     color: var(--white);
-
-
-
     letter-spacing: -0.6px;
 }
 .menu-basket {
@@ -109,6 +105,18 @@
     background-image: url("../../../assets/images/svg/basket.svg");
     width: 27px;
     margin-left: 8px;
+    position: relative;
+}
+.menu-basket-counter {
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: var(--Orange);
+    color: var(--white);
+    border-radius: 100%;
+    right: -7px;
+    text-align: center;
+    line-height: 15px;
 }
 .menu-search {
     display: none;

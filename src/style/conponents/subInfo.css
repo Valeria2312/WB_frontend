@@ -101,7 +101,8 @@
 .payment-description {
     display: flex;
     gap: 3px;
-    margin-bottom: 6px;
+    /*margin-bottom: 6px;*/
+    margin-top: 7px;
 }
 .payment-description-text-inPaymentMethod {
     display: flex;
@@ -116,6 +117,7 @@
     font-weight: 400;
     line-height: 16px;
 }
+
 .recipient input {
     border: none;
     border-bottom: 1px solid var(--rulers-rulers-input);
@@ -128,7 +130,9 @@
 }
 .recipient-inputs {
     /*position: relative;*/
-    padding-bottom: 19px;
+    /*padding-bottom: 19px;*/
+
+    padding-top: 5px;
 }
 .recipient-inputs-1 {
     display: flex;

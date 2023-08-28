@@ -5,7 +5,10 @@
     background-color: var(--background-smoky);
 }
 .basket-content {
-    width: calc(100% - 340px - 40px);
+    /*width: calc(100% - 340px - 40px);*/
+    /*width: 100%;*/
+
+    width: 83%;
     padding-top: 12px;
 }
 .basket-order {
@@ -22,13 +25,16 @@
     margin-bottom: 26px;
 }
 .basket-items-active {
-    max-width: 891px;
+    /*max-width: 891px;*/
     /*position: relative;*/
+    max-width: 892px;
 }
 .basket-items__checkbox {
     display: flex;
     border-bottom: 1px solid var(--rulers-rulers);
-    padding-bottom: 18px;
+    /*padding-bottom: 18px;*/
+
+    padding-bottom: 11px;
 }
 .basket-items {
     margin-top: 11px;
@@ -37,6 +43,9 @@
     gap: 28px;
 }
 .basket-items-mobile{
+    display: none;
+}
+.basket-items-mobile .basket-item {
     display: none;
 }
 /*.checkbox-custom {*/
@@ -59,16 +68,18 @@
     background: #fff;
     border: 1px solid #d3d4dd;
     display: inline-block;
-    width: 22px;
-    height: 22px;
+    /*width: 22px;*/
+    /*height: 22px;*/
+    width: 24px;
+    height: 24px;
     border-radius: 6px;
     position: relative;
     cursor: pointer;
 }
 .newCheckbox::before {
     content: '';
-    width: 19px;
-    height: 19px;
+    width: 24px;
+    height: 24px;
     background-image: url("../../../assets/images/svg/checked.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -87,6 +98,10 @@
     color: var(--text-black);
     font-family: Segoe UI, serif;
     font-weight: 400;
+    padding-left: 9px;
+
+    position: absolute;
+    top: 185px;
 }
 .accordion__icon {
     width: 20px;

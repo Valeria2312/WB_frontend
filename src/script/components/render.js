@@ -13,10 +13,10 @@ productData.forEach((product) => {
     let getProductInfo = () => {
         let arrInfo = [];
         if(product.productInfo) {
-            if(product.productInfo.size) {
-                arrInfo.push( `<p class="basket-item-size">Размер: ${product.productInfo.size}</p>`)
-            } if(product.productInfo.color) {
+            if(product.productInfo.color) {
                 arrInfo.push(`<p class="basket-item-color">Цвет: ${product.productInfo.color}</p>`)
+            } if(product.productInfo.size) {
+                arrInfo.push( `<p class="basket-item-size">Размер: ${product.productInfo.size}</p>`)
             }
         }
         return `<div class="basket-item-quality">${arrInfo.join("")}</div>`
@@ -29,8 +29,11 @@ productData.forEach((product) => {
      let getDiscount = () => {
        let fullPrice = product.price * product.quantity;
        let newPrice = fullPrice - product.discount;
-       return `<span class="basket-item-newPrice">${newPrice} <p class="basket-item-newPrice-currency">сом</p></span>`;
-     }
+       if(newPrice > 10000 ) {
+           return  `<span class="basket-item-newPrice largeNumber">${Number.parseInt(newPrice).toLocaleString('ru')} <p class="basket-item-newPrice-currency">сом</p></span>`;
+       }
+           return `<span class="basket-item-newPrice">${Number.parseInt(newPrice).toLocaleString('ru')} <p class="basket-item-newPrice-currency">сом</p></span>`;
+         }
      let getFullPrice = () => {
         let fullPrice = product.price * product.quantity;
         return ` <span class="basket-item-oldPrice strike">${fullPrice} сом</span>
