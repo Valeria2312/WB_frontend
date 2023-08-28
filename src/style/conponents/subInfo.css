@@ -173,6 +173,19 @@
     .mark {
         right: 10px;
     }
+    .payment-description {
+        margin-top: 0;
+        margin-bottom: 7px;
+    }
+    .payment-description-text-inPaymentMethod {
+        margin-left: 7px;
+    }
+    .recipient-inputs-1 input {
+        width: 285px;
+    }
+    .recipient-inputs-2 input {
+        width: 185px;
+    }
 }
 @media screen and (max-width: 883px){
     .recipient-inputs-2  {

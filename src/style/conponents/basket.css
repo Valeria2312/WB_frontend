@@ -131,9 +131,16 @@
 @media screen and (width: 1024px){
     .basket{
         justify-content: space-between;
+        gap: 30px;
+        /*Изменения пиксель перфект верстки в связи с тем, что расширение захватывает зону скрола*/
+        /*padding-right: 0;*/
+        padding-right: 9px;
+        /*margin-right: 9px;*/
+        margin-right: 0;
     }
     .basket-content{
-        width: calc(100% - 297px - 40px);
+        /*width: calc(100% - 297px - 40px);*/
+        width: 66%;
     }
 }
 @media screen and (max-width: 874px){
