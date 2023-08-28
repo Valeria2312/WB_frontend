@@ -1,6 +1,3 @@
-// const renderProductData = () => {
-//
-// }
 let products = '',
     productsInMobile = '',
     productsOutStock = '',
@@ -8,6 +5,20 @@ let products = '',
     methodDelivery = '',
     costDelivery = '',
     paymentDescription = '';
+let currentAddress = localStorage.getItem("currentAddress");
+let getCurrentAddress = () => {
+        if(currentAddress) {
+            return `<span class="point-issue-title">Пункт выдачи</span>
+            <span class="point-issue-text">${currentAddress}<span class="point-issue-subText"><img
+                class="point-issue-img" src="assets/images/svg/star.svg"
+                alt="звезда">${deliveryData[0].rating} ${deliveryData[0].workSchedule}</span></span>`
+        } else {
+            return `<span class="point-issue-title">Пункт выдачи</span>
+            <span class="point-issue-text">${deliveryData[0].address}<span class="point-issue-subText"><img
+                class="point-issue-img" src="assets/images/svg/star.svg"
+                alt="звезда">${deliveryData[0].rating} ${deliveryData[0].workSchedule}</span></span>`
+        }
+    }
 
 productData.forEach((product) => {
     let getProductInfo = () => {
@@ -243,8 +254,7 @@ productData.forEach((product) => {
                             </div>
                         </div>`
 })
-methodDelivery += `<span class="point-issue-title">Пункт выдачи</span>
-                        <span class="point-issue-text">${deliveryData[0].address}<span class="point-issue-subText"><img class="point-issue-img" src="assets/images/svg/star.svg" alt="звезда">${deliveryData[0].rating} ${deliveryData[0].workSchedule}</span></span>`
+methodDelivery += `${getCurrentAddress()}`
 costDelivery += `<span class="cost-delivery-title">Стоимость доставки</span> <span>${deliveryData[0].shippingCost}</span>`
 paymentDescription += `<img src="${cardData[0].img}" alt="delivery-free">
                         <span class="payment-description-text-inPaymentMethod">${cardData[0].number}<span>01/30</span></span>`;
@@ -256,4 +266,5 @@ document.querySelector(".basket-item-noProduct").innerHTML = productsOutStock;
 document.querySelector(".basket-items-mobile-noProduct").innerHTML = productsOutStockInMobile;
 document.querySelector(".point-issue").innerHTML = methodDelivery;
 document.querySelector(".cost-delivery").innerHTML = costDelivery;
-document.querySelector(".payment-description").innerHTML = paymentDescription
+document.querySelector(".payment-description").innerHTML = paymentDescription;
+document.querySelector(".order-delivery-details-address").innerHTML = methodDelivery;

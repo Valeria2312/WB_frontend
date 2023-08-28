@@ -132,7 +132,6 @@
     .basket{
         justify-content: space-between;
         gap: 30px;
-        /*Изменения пиксель перфект верстки в связи с тем, что расширение захватывает зону скрола*/
         /*padding-right: 0;*/
         /*padding-right: 9px;*/
         /*margin-right: 9px;*/

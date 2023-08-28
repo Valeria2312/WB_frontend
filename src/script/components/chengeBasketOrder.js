@@ -11,10 +11,8 @@ function countFullPrice() {
         discountPrice = 0,
         productQuantity = 0
     const dataStorage = JSON.parse(localStorage.getItem("productData"))
-    // console.log(dataStorage)
     dataStorage.forEach((product) => {
                 if(product.quantity && product.isChecked){
-                    // console.log(product.quantity)
                     fullPrice += Number(product.price) * Number(product.quantity);
                     newFullPrice += Number(product.price)  * Number(product.quantity) - Number(product.discount);
                     discountPrice -= (Number(product.price) * Number(product.quantity)) - (Number(product.price) * Number(product.quantity) - Number(product.discount));
