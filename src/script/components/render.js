@@ -40,7 +40,6 @@ productData.forEach((product) => {
     }
     let getSizeProductInfoInMobileOutStock = () => {
         if(product.openCheck && product.openSize) {
-            console.log(product.openCheck)
             return `
                 <p class="basket-item-size-mobile-more">${product.openSize}</p>
                 <p class="basket-item-openCheck"></p>`
@@ -48,7 +47,6 @@ productData.forEach((product) => {
             return ""
         }
     }
-
     let getInStock = () => {
          if (product.inStock < 5) {
              return `<div class="basket-item-notification">Осталось ${product.inStock} шт.</div>`
@@ -142,67 +140,7 @@ productData.forEach((product) => {
                                 </div>
                             </div>
                         </div>`
-//     productsInMobile += `<div class="basket-item">
-//                             <div class="basket-item-mainInformation">
-//                                 <div class="basket-item-img">
-// <!--                                    <div class="checkbox-custom checkbox-inItem">-->
-// <!--                                        <label for="checkbox-id" class="checkbox-label">-->
-// <!--                                            <input type="checkbox" checked />-->
-// <!--                                            <span class="newCheckbox"></span>-->
-// <!--                                        </label>-->
-// <!--                                    </div>-->
-//                                 <div class="checkbox-custom checkbox-inItem">
-//                                     <label for="checkbox-id" class="checkbox-label">
-//                                         <input class="realCheckbox" type="checkbox" checked/>
-//                                         <span class="newCheckbox"></span>
-//                                     </label>
-//                                 </div>
-//                                 ${getSizeProductInfoInMobile()}
-//                                     <div class="basket-item-photo">
-//                                         <img src="${product.img}" alt="Изображение товара">
-//                                     </div>
-//                                 </div>
-//                                 <div class="basket-item-count">
-//                                     <div class="counter">
-//                                         <button type="button" value="-" class="btn-minus">
-//                                             <img src="assets/images/svg/minus.svg" alt="минус">
-//                                         </button>
-//                                         <input
-//                                                 type="number"
-//                                                 value="1"
-//                                                 name="count"
-//                                                 class="input-count"
-//                                                 readonly
-//                                         />
-//                                         <button type="button" value="+" class="btn-plus">
-//                                             <img src="assets/images/svg/plus.svg" alt="плюс">
-//                                         </button>
-//                                     </div>
-//                                 </div>
-//                                 </div>
-//                             <div class="basket-item-description">
-//                                 <div class="basket-item-price">
-//                                     ${getDiscount()}
-//                                     <span class="basket-item-oldPrice strike">${product.price} сом</span>
-//                                 </div>
-//                                 <span class="basket-item-name tree_point">${product.productName}</span>
-//                                 ${getProductInfoInMobile()}
-//                                 <div class="basket-item-info">
-//                                     <p class="basket-item-warehouse">${product.warehouse}</p>
-//                                 </div>
-//                                 <div class="basket-item-functions">
-//                                     <span class="basket-item-notification">Осталось ${product.inStock} шт.</span>
-//                                     <div class="basket-item-opportunities">
-//                                         <button class="basket-item-addFavorite">
-//                                             <img src="assets/images/svg/favorite.svg" alt="Добавить в избранное">
-//                                         </button>
-//                                         <button class="basket-item-delete">
-//                                             <img src="assets/images/svg/delete.svg" alt="Удалить товар">
-//                                         </button>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                             </div>`
+
     productsInMobile += `<div class="basket-item">
                             <div class="basket-item-mainInformation">
                                 <div class="basket-item-img">
@@ -264,7 +202,7 @@ productData.forEach((product) => {
     productsOutStock += `<div class="basket-item">
                             <div class="basket-item-mainInformation">
                                 <div class="basket-item-photo">
-                                    <img src="${product.img}" alt="Изображение товара">
+                                    <img src="${product.imgOutStock}" alt="Изображение товара">
                                 </div>
                                 <div class="basket-item-description">
                                     <span class="basket-item-name">${product.productName}</span>

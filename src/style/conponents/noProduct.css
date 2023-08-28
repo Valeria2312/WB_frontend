@@ -5,6 +5,10 @@
 }
 .basket-items-noProduct .basket-item-photo {
     margin-left: 0;
+    width: 72px;
+}
+.basket-item-photo img {
+    width: 100%;
 }
 .basket-items-mobile-noProduct {
     display: none;

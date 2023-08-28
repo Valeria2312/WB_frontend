@@ -2,7 +2,7 @@
     display: flex;
     padding: 15px 24px 24px 24px;
     flex-direction: column;
-    gap: 24px;
+    gap: 23px;
     align-self: stretch;
     border-radius: 16px;
     background: var(--white);
@@ -103,7 +103,7 @@
     align-self: stretch;
     border-radius: 16px;
     background: var(--white);
-    margin-top: 16px;
+    margin-top: 12px;
 }
 .payment-method-header {
     margin-bottom: 16px;
@@ -111,8 +111,15 @@
 .payment-description {
     display: flex;
     gap: 3px;
-    /*margin-bottom: 6px;*/
     margin-top: 7px;
+
+    gap: 10px;
+    margin-top: -4px;
+    margin-bottom: 8px;
+}
+.basket-order .payment-description {
+    margin-top: 7px;
+    margin-bottom: -2px;
 }
 .payment-description-text-inPaymentMethod {
     display: flex;

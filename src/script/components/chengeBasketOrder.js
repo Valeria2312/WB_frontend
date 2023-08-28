@@ -1,4 +1,4 @@
-const products = document.querySelectorAll(".basket-items-active .basket-items .basket-item")
+const products = document.querySelectorAll(".basket-items-active .basket-item")
 
 window.addEventListener('DOMContentLoaded', () => {
     countFullPrice()
