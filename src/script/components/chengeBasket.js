@@ -21,12 +21,14 @@ function countFullPrice() {
                     productQuantity += Number(product.quantity)
                 }
     })
+    console.log(newFullPrice)
     document.querySelector(".order-final-order").innerHTML = `${Number.parseInt(newFullPrice).toLocaleString('ru')} сом` ;
     document.querySelector(".order-notDiscount-order").innerHTML = `${Number.parseInt(fullPrice).toLocaleString('ru')} сом`;
     document.querySelector(".order-discount-order").innerHTML =  `${Number.parseInt(discountPrice).toLocaleString('ru')} сом` ;
     document.querySelector(".order-notDiscount-text").innerHTML = `${productQuantity} товара`;
     localStorage.setItem("newFullPrice", newFullPrice)
     localStorage.setItem("productQuantity", productQuantity)
+    changeNewFullPrice()
 }
 
 //каунтер
@@ -47,7 +49,7 @@ products.forEach((product) => {
                         } else {
                             counter.value++;
                             dataItem.quantity = counter.value
-                            localStorage.setItem("productData",JSON.stringify(dataStorage));
+                            localStorage.setItem("productDataInBasket",JSON.stringify(dataStorage));
                             countFullPrice();
                             countingAmounts(product,dataItem.quantity);
                         }
@@ -58,7 +60,7 @@ products.forEach((product) => {
                         } else {
                             counter.value--;
                             dataItem.quantity = counter.value
-                            localStorage.setItem("productData",JSON.stringify(dataStorage));
+                            localStorage.setItem("productDataInBasket",JSON.stringify(dataStorage));
                             countFullPrice();
                             countingAmounts(product,  dataItem.quantity);
                         }
@@ -162,17 +164,15 @@ function addProductInDelivery(check, product) {
 const paymentCheckbox = document.querySelector(".paymentNow-check input");
 const paymentButton = document.querySelector(".send-order");
 
-paymentCheckbox.addEventListener("change", function () {
+paymentCheckbox.addEventListener("change", changeNewFullPrice)
+function changeNewFullPrice () {
     const newFullPrice = localStorage.getItem("newFullPrice")
     if(paymentCheckbox.checked) {
         paymentButton.innerHTML = `Оплатить ${Math.round(Number(newFullPrice)).toLocaleString('ru')} сом`
     } else {
         paymentButton.innerHTML = `Заказать`
     }
-})
-
-
-// аккордион
+}
 const accordion = document.querySelector(".basket-items__checkbox .accordion__icon");
 const itemsAccordion = document.querySelector(".basket-items");
 
