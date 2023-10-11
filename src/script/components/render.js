@@ -4,23 +4,37 @@ let products = '',
     productsOutStockInMobile = '',
     methodDelivery = '',
     costDelivery = '',
-    paymentDescription = '';
-let currentAddress = localStorage.getItem("currentAddress");
-let getCurrentAddress = () => {
+    paymentDescription = '',
+    methodDeliveryInOrder = '',
+    renderDeliveryDate = '';
+
+let getCurrentAddress = (inOrder) => {
+    let currentAddress = localStorage.getItem("currentAddress");
+    if(inOrder) {
         if(currentAddress) {
-            return `<span class="point-issue-title">Пункт выдачи</span>
+            return `
+<span class="point-issue-text">${currentAddress}</span>`
+        } else {
+            return `<span class="point-issue-text">${deliveryData[0].address}</span>`
+        }
+    } else {
+        if(currentAddress) {
+            return `
+<span class="point-issue-title">Пункт выдачи</span>
             <span class="point-issue-text">${currentAddress}<span class="point-issue-subText"><img
                 class="point-issue-img" src="assets/images/svg/star.svg"
                 alt="звезда">${deliveryData[0].rating} ${deliveryData[0].workSchedule}</span></span>`
         } else {
-            return `<span class="point-issue-title">Пункт выдачи</span>
+            return `
+<span class="point-issue-title">Пункт выдачи</span>
             <span class="point-issue-text">${deliveryData[0].address}<span class="point-issue-subText"><img
                 class="point-issue-img" src="assets/images/svg/star.svg"
                 alt="звезда">${deliveryData[0].rating} ${deliveryData[0].workSchedule}</span></span>`
         }
     }
+}
 
-productData.forEach((product) => {
+productData.forEach((product, index ) => {
     let getProductInfo = () => {
         let arrInfo = [];
         if(product.productInfo) {
@@ -64,21 +78,25 @@ productData.forEach((product) => {
          } return ``
      }
      let getDiscount = () => {
-       let fullPrice = product.price * product.quantity;
-       let newPrice = fullPrice - product.discount;
+       let fullPrice = Number(product.price) * Number(product.quantity);
+       let newPrice = fullPrice - Number(product.discount) * Number(product.quantity);
        if(newPrice > 10000 ) {
            return  `<span class="basket-item-newPrice largeNumber">${Number.parseInt(newPrice).toLocaleString('ru')} <p class="basket-item-newPrice-currency">сом</p></span>`;
        }
            return `<span class="basket-item-newPrice">${Number.parseInt(newPrice).toLocaleString('ru')} <p class="basket-item-newPrice-currency">сом</p></span>`;
          }
      let getFullPrice = () => {
-        let fullPrice = product.price * product.quantity;
+        let fullPrice = Number(product.price) * Number(product.quantity);
         return ` <span class="basket-item-oldPrice strike">${fullPrice} сом</span>
                                            <div class="price-info-container">
                                                 <div class="discountOnProduct"><div class="discountOnProduct-header">Скидка 55%</div> <div>-${product.discountOnProduct} сом</div></div>
                                                 <div class="discountPersonal"><div class="discountPersonal-header">Скидка покупателя 10%</div> <div>-${product.discountPersonal} сом</div></div>
                                             </div>`
      }
+    const isThirdProduct = index === 2;
+
+    // Создаем класс счетчика, добавляя индекс, если это третий продукт
+    const counterClass = isThirdProduct ? `counter-${index + 1}` : "";
     products += `<div class="basket-item">
                             <div class="basket-item-mainInformation">
                                 <div class="checkbox-custom checkbox-inItem">
@@ -111,7 +129,7 @@ productData.forEach((product) => {
                             <div class="basket-item-subInformation">
                                 <div class="basket-item-functions">
                                     <div class="basket-item-count">
-                                        <div class="counter">
+                                        <div class="counter ${counterClass}">
                                             <button type="button" value="-" class="btn-minus">
                                                 <img src="assets/images/svg/minus.svg" alt="минус">
                                             </button>
@@ -266,10 +284,45 @@ productData.forEach((product) => {
                             </div>
                         </div>`
 })
-methodDelivery += `${getCurrentAddress()}`
+methodDelivery += `${getCurrentAddress(false)}`
+methodDeliveryInOrder += `${getCurrentAddress(true)}`
 costDelivery += `<span class="cost-delivery-title">Стоимость доставки</span> <span>${deliveryData[0].shippingCost}</span>`
 paymentDescription += `<img src="${cardData[0].img}" alt="delivery-free">
                         <span class="payment-description-text-inPaymentMethod">${cardData[0].number}<span>01/30</span></span>`;
+productData.forEach((product) => {
+    let manyPositions1 = null;
+    let manyPositions2 = null;
+    let renderDeliveryDate1 = [];
+    let renderDeliveryDate2 = [];
+    let renderItem = (product) => {
+        return `<div class="delivery-date-productImg-item">
+                <span class="menu-basket-counter">${product.quantity}</span>
+                <div class="delivery-productImg">
+                    <img src="${product.imdMini}" alt="photo">
+                </div>
+            </div>`
+    }
+        if(product.quantity > 100) {
+            manyPositions1 = Object.assign({}, product);
+            manyPositions1.quantity = 184;
+            renderDeliveryDate1.push(renderItem(manyPositions1));
+
+            manyPositions2 = Object.assign({}, product);
+            manyPositions2.quantity -= 184;
+            renderDeliveryDate2.push(renderItem(manyPositions2));
+        }else {
+                renderDeliveryDate1.push(renderItem(product));
+            }
+    const deliveryDates = document.querySelectorAll('.delivery-date-container');
+
+    deliveryDates.forEach((date) => {
+        if (date.previousElementSibling.textContent.includes('5—6 февраля')) {
+            date.innerHTML += renderDeliveryDate1;
+        } else if (date.previousElementSibling.textContent.includes('7—8 февраля')) {
+            date.innerHTML += renderDeliveryDate2;
+        }
+    })
+})
 
 
 document.querySelector(".basket-items").innerHTML = products;
@@ -279,4 +332,5 @@ document.querySelector(".basket-items-mobile-noProduct").innerHTML = productsOut
 document.querySelector(".point-issue").innerHTML = methodDelivery;
 document.querySelector(".cost-delivery").innerHTML = costDelivery;
 document.querySelector(".payment-description").innerHTML = paymentDescription;
-document.querySelector(".order-delivery-details-address").innerHTML = methodDelivery;
+document.querySelector(".order-delivery-details-address").innerHTML = methodDeliveryInOrder;
+

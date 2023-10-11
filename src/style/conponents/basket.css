@@ -1,14 +1,11 @@
 .basket {
     display: flex;
     padding: 0 24px 27px 24px;
-    gap: 32px;
+    gap: 30px;
     background-color: var(--background-smoky);
 }
 .basket-content {
-    /*width: calc(100% - 340px - 40px);*/
-    /*width: 100%;*/
-
-    width: 83%;
+    width: 892px;
     padding-top: 12px;
 }
 .basket-order {
@@ -23,24 +20,21 @@
     letter-spacing: -0.28px;
     color: var(--text-black);
     margin-bottom: 26px;
+    max-width: 892px;
 }
 .basket-items-active {
-    /*max-width: 891px;*/
-    /*position: relative;*/
     max-width: 892px;
 }
 .basket-items__checkbox {
     display: flex;
     border-bottom: 1px solid var(--rulers-rulers);
-    /*padding-bottom: 18px;*/
-
     padding-bottom: 11px;
 }
 .basket-items {
     margin-top: 11px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 30px;
 }
 .basket-items-mobile{
     display: none;
@@ -48,28 +42,16 @@
 .basket-items-mobile .basket-item {
     display: none;
 }
-/*.checkbox-custom {*/
-/*    display: inline-block;*/
-/*    cursor: pointer;*/
-/*    padding-left: 33px;*/
-/*    position: relative;*/
-/*    font-size: 0;*/
-/*    line-height: 0;*/
-/*    -webkit-touch-callout: none;*/
-/*    user-select: none;*/
-/*}*/
 .realCheckbox{
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 24px;
+    height: 24px;
     opacity: 0;
 }
 .newCheckbox{
     background: #fff;
     border: 1px solid #d3d4dd;
     display: inline-block;
-    /*width: 22px;*/
-    /*height: 22px;*/
     width: 24px;
     height: 24px;
     border-radius: 6px;
@@ -83,8 +65,6 @@
     background-image: url("../../../assets/images/svg/checked.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
     position: absolute;
     transform:scale(0);
     transition: 0.2s ease-in;
@@ -128,19 +108,32 @@
     content: '+';
     transform: rotate(-45deg);
 }
+@media screen and (max-width: 1169px){
+    .basket {
+        flex-direction: column;
+    }
+    .basket-content {
+        width: 100%;
+    }
+    .basket-content > * {
+        max-width: 100%;
+    }
+}
 @media screen and (width: 1024px){
     .basket{
+        flex-direction: row;
         justify-content: space-between;
         gap: 30px;
-        /*padding-right: 0;*/
-        /*padding-right: 9px;*/
-        /*margin-right: 9px;*/
         margin-right: 0;
     }
     .basket-content{
-        /*width: calc(100% - 297px - 40px);*/
         width: 66%;
     }
+    .paymentNow .newCheckbox {
+        width: 22px;
+        height: 22px;
+    }
+
 }
 @media screen and (max-width: 1022px){
     .basket {
@@ -158,7 +151,7 @@
         display: flex;
     }
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 535px){
     .basket{
         gap: 0;
     }
@@ -197,33 +190,32 @@
         display: block;
         padding-left: 32px;
         position: absolute;
-        top: 117px;
+        top: 146px;
     }
     .basket-item-img {
-        /*width: 80px;*/
-        /*height: 106px;*/
-        /*margin-bottom: 24px;*/
-        /*width: 28px;*/
-        /*height: 106px;*/
-
     }
     .basket-items-mobile .basket-item-photo {
-        /*width: 100%;*/
-        /*height: 100%;*/
+
         margin-left: 0;
-        /*width: 28px;*/
-        /*height: 106px;*/
     }
     .basket-items-mobile .basket-item-photo img {
-        /*width: 100%;*/
-        /*height: 100%;*/
-        /*margin-top: -4px;*/
-        /*margin-top: 7px;*/
         margin-left: 0;
-
-        /*width: 100%;*/
-        /*height: 100%;*/
         width: 80px;
         height: auto;
+    }
+    .newCheckbox {
+        width: 21px;
+
+    }
+    .newCheckbox::before {
+        bottom: -1px;
+    }
+}
+@media screen and (max-width: 320px){
+    .checkbox-text {
+        top: 115px;
+    }
+    .basket-content > * {
+        max-width: 318px;
     }
 }

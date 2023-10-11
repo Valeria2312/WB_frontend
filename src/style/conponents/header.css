@@ -1,5 +1,6 @@
 .wrapper {
     min-height: 100vh;
+    overflow-x: hidden;
 }
 .header {
     background-color: var( --system-violet);
@@ -116,7 +117,6 @@
     border-radius: 100%;
     right: -7px;
     text-align: center;
-    line-height: 15px;
     font-size: 10px;
     font-weight: 600;
     line-height: 18px;
@@ -124,6 +124,22 @@
 .menu-search {
     display: none;
 }
+
+@media screen and (max-width: 455px){
+    .header-search {
+        display: none;
+    }
+    .menu-profile, .menu-basket {
+        display: none;
+    }
+    .menu-search {
+        display: flex;
+        background-color: var(--system-violet);
+        border: none;
+        padding: 0;
+    }
+}
+
 @media screen and (width: 320px){
 .header {
     padding: 14px 0 18px;
@@ -147,7 +163,7 @@
     font-weight: 600;
     line-height: 24px;
     font-variant: all-small-caps;
-    letter-spacing: 0.52px;
+    letter-spacing: 0.03rem;
     width: 198px;
 }
 .header-search {

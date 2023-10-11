@@ -44,7 +44,8 @@
     flex-direction: column;
 }
 .order-delivery-details {
-    gap: 5px;
+    /*gap: 5px;*/
+    gap: 1px;
     margin-bottom: 11px;
 }
 .order-delivery-details-text, .payment-title {
@@ -138,7 +139,7 @@
     align-self: stretch;
     border-radius: 8px;
     background: var(--background-smoky);
-    margin-top: 15px;
+    margin-top: 18px;
     font-family: Segoe UI, serif;
     font-size: 13px;
     font-weight: 400;
@@ -185,6 +186,9 @@
     .basket-order {
         max-width: 303px;
     }
+    .order-delivery-details {
+        gap: 6px;
+    }
     .delivery-free {
         padding: 8px 9px 12px 8px;
     }
@@ -192,9 +196,15 @@
         margin-top: -24px;
     }
 }
+@media screen and (max-width: 1169px) {
+    .basket-order {
+        max-width: 100%;
+    }
+}
+
 @media screen and (max-width: 1022px){
     .basket-order {
-        max-width: 600px;
+        max-width: 100%;
     }
 }
 @media screen and (width: 320px){
@@ -203,7 +213,7 @@
         background: none;
         box-shadow: none;
         padding: 0;
-        margin-top: 19px;
+        margin-top: 16px;
     }
     .order-final {
         font-size: 20px;
@@ -229,6 +239,10 @@
         display: none;
     }
     .paymentNow {
-        margin-bottom: 21px;
+        margin-bottom: 23px;
+        margin-top: 12px;
+    }
+    .paymentNow-check-text {
+        padding-left: 8px;
     }
 }

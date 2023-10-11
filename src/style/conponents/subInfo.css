@@ -6,10 +6,11 @@
     align-self: stretch;
     border-radius: 16px;
     background: var(--white);
-    margin-top: 37px;
+    margin-top: 43px;
 }
 .recipient {
-    margin-top: 18px;
+    margin-top: 15px;
+    gap: 3px;
 }
 .delivery-method .delivery-free {
     background-color: var(--white);
@@ -53,7 +54,7 @@
     display: flex;
     flex-direction: column;
     width: 322px;
-    line-height: 1.6;
+    line-height: 25px;
     letter-spacing: 0.1px;
     margin-top: -2px;
 }
@@ -69,8 +70,19 @@
 .cost-delivery-title {
     letter-spacing: 0.2px;
 }
+.delivery-items {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
 .delivery-date-title {
     margin-top: -5px;
+}
+.delivery-date-container {
+    display: flex;
+    margin-top: -7px;
+    gap: 10px;
 }
 .delivery-date {
     display: flex;
@@ -85,8 +97,17 @@
     margin-left: -8px;
     padding-bottom: 0;
 }
+
 .delivery-date-productImg-item {
     position: relative;
+}
+.delivery-date-productImg-item img {
+    width: 100%;
+    height: 100%;
+}
+.delivery-productImg {
+    width: 40px;
+    height: 56px;
 }
 .delivery-date-productImg-item .menu-basket-counter {
     right: 0;
@@ -103,7 +124,8 @@
     align-self: stretch;
     border-radius: 16px;
     background: var(--white);
-    margin-top: 12px;
+    margin-top: 17px;
+    gap: 3px;
 }
 .payment-method-header {
     margin-bottom: 16px;
@@ -139,23 +161,20 @@
     border: none;
     border-bottom: 1px solid var(--rulers-rulers-input);
     outline: none !important;
-    height: 20px;
-
+    height: 45px;
 }
 .recipient input:focus::placeholder {
     transform: translateY(-10px);
 }
 .recipient-inputs {
-    /*position: relative;*/
-    /*padding-bottom: 19px;*/
+    padding-top: 2px;
 
-    padding-top: 5px;
 }
 .recipient-inputs-1 {
     display: flex;
     gap: 20px;
     margin-top: 11px;
-    margin-bottom: 41px;
+    margin-bottom: 18px;
 }
 .recipient-inputs-1 input {
     width: 338px;
@@ -170,15 +189,19 @@
 .recipient-inputs input {
     font-size: 16px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 31px;
+    padding-top: 16px;
+}
+.recipient-input5 {
+    padding-left: 6px;
 }
 .mark {
     font-size: 12px;
     font-weight: 400;
     line-height: 14px;
-    /*position: absolute;*/
     right: 188px;
     padding-top: 3px;
+    padding-left: 6px;
 }
 .error {
     color: var(--Orange);
@@ -194,8 +217,19 @@
         margin-top: 0;
         margin-bottom: 7px;
     }
+    .order-delivery-details .point-issue-text {
+        white-space: pre-wrap;
+        max-width: 232px;
+        line-height: 16px;
+    }
+    .payment-method {
+        gap: 1px;
+    }
     .payment-description-text-inPaymentMethod {
         margin-left: 7px;
+    }
+    .recipient-inputs-1 {
+        margin-top: 13px;
     }
     .recipient-inputs-1 input {
         width: 285px;
@@ -203,24 +237,100 @@
     .recipient-inputs-2 input {
         width: 185px;
     }
+    .recipient-input5, .mark {
+        padding-left: 0;
+    }
 }
 @media screen and (max-width: 883px){
     .recipient-inputs-2  {
        flex-wrap: wrap;
     }
-
 }
+
+@media screen and (max-width: 772px) {
+    .recipient-inputs-1 input {
+        max-width: 250px;
+    }
+
+    .recipient-inputs-2 input {
+        max-width: 250px;
+
+    }
+}
+
+@media screen and (max-width: 672px){
+    .recipient-inputs-1 input {
+        max-width: 269px;
+    }
+    .recipient-inputs-2 input {
+        max-width: 269px;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    .recipient-inputs-1 input {
+        max-width: 220px;
+    }
+
+    .recipient-inputs-2 input {
+        max-width: 220px;
+
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .recipient-inputs-1 input {
+        max-width: 180px;
+    }
+
+    .recipient-inputs-2 input {
+        max-width: 180px;
+
+    }
+}
+@media screen and (max-width: 450px) {
+    .recipient-inputs-1 {
+        flex-direction: column;
+    }
+    .recipient-inputs-1 input {
+        max-width: 290px;
+    }
+
+    .recipient-inputs-2 input {
+        max-width: 290px;
+        width: 290px;
+
+    }
+}
+@media screen and (max-width: 350px){
+    .recipient-inputs-1 {
+        flex-direction: column;
+    }
+    .recipient-inputs-1 input {
+        max-width: 200px;
+    }
+
+    .recipient-inputs-2 input {
+        max-width: 200px;
+        width: 200px;
+
+    }
+}
+
 @media screen and (width: 320px) {
     .delivery-method, .payment-method, .recipient{
         margin-right: -14px;
-        margin-left: -14px;
-        margin-top: 13px;
+        margin-left: -16px;
+        margin-top: 14px;
         padding: 15px 16px 24px 16px;
         gap: 0;
     }
     .delivery-method-header, .payment-method-header, .recipient-header {
         font-weight: 700;
-        margin-bottom: 18px;
+        margin-bottom: 16px;
+    }
+    .recipient-header {
+        margin: 0;
     }
     .delivery-method-title, .payment-method-title, .recipient-title{
         font-size: 20px;
@@ -241,19 +351,28 @@
     .point-issue-text {
         width: 286px;
     }
+    .point-issue .point-issue-text {
+        margin-top: 1px;
+    }
+    .point-issue .point-issue-subText {
+        margin-top: -3px;
+    }
     .cost-delivery{
         flex-direction: column;
-        margin-bottom: 28px;
+        margin-bottom: 25px;
     }
     .delivery-date {
         flex-direction: column;
         gap: 18px;
         margin-bottom: 28px;
     }
+    .delivery-items {
+        gap: 5px;
+    }
     .delivery-free-inDeliveryMethod {
         margin-left: 0;
-        margin-top: -5px;
         padding: 0 25px 12px 8px;
+        margin-top: -2px;
     }
     .payment-method {
         margin-top: 0;
@@ -284,16 +403,25 @@
         margin-bottom: 0;
         margin-top: 3px;
     }
+    .recipient-inputs-1 {
+        gap: 26px;
+    }
     .recipient-inputs-2 {
-        margin-top: 51px;
-        gap: 50px;
+        margin-top: 27px;
+        gap: 28px;
     }
     .recipient input {
         width: 100%;
     }
+    .recipient-input5 {
+        padding-left: 0;
+    }
     .mark {
         position: inherit;
-        right: 0;
+        /*right: 0;*/
+        padding-left:0;
+        padding-top:0;
+        margin-left: -1px;
 }
 }
 

@@ -75,9 +75,9 @@ addressCorrect.addEventListener("click", () => openPayModal(modal, null, buttons
 btnClose.addEventListener("click", () => closePayModal(modal));
 btnModal.addEventListener("click", () => setData());
 let activeItem;
+
 function changeRadiobuttons() {
     const radiobuttons = document.querySelectorAll(".overlay-modal .card-item");
-    console.log(radiobuttons)
     radiobuttons.forEach((item) => {
         item.addEventListener("click", function () {
             let currentItem = item.querySelector("input");
@@ -86,7 +86,6 @@ function changeRadiobuttons() {
         })
     })
 }
-// console.log(activeItem)
 function openPayModal(modal, renderCards, buttonsDelivery) {
     modal.style.opacity = "1";
     modal.style.visibility = "inherit"
@@ -145,5 +144,23 @@ function setData() {
             localStorage.setItem("currentCard", activeItem.value)
         }
         closePayModal(modal)
+        getCurrentAddress()
     }
+}
+let methodDelivery = "";
+let methodDeliveryInOrder = "";
+
+let getCurrentAddress = () => {
+    const deliveryInOrder =  document.querySelector(".point-issue")
+    const deliveryContent = document.querySelector(".order-delivery-details-address")
+    const currentAddress = localStorage.getItem("currentAddress");
+
+        methodDelivery += `<span class="point-issue-text">${currentAddress}</span>`
+        methodDeliveryInOrder += `<span class="point-issue-title">Пункт выдачи</span>
+            <span class="point-issue-text">${currentAddress}<span class="point-issue-subText"><img
+                class="point-issue-img" src="assets/images/svg/star.svg"
+                alt="звезда">${deliveryData[0].rating} ${deliveryData[0].workSchedule}</span></span>`
+
+        deliveryInOrder.innerHTML = methodDeliveryInOrder;
+        deliveryContent.innerHTML  = methodDelivery;
 }

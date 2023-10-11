@@ -5,7 +5,7 @@ const productData = [
         productName: "Футболка UZcotton мужская",
         img: "assets/images/jpg/Photo_1.jpg",
         imgOutStock: "assets/images/jpg/Photo_1NP.jpg",
-        imdMini: "assets/images/jpg/Photo_1-minni.jpg",
+        imdMini: "assets/images/jpg/Photo_1-mini.jpg",
         productInfo:{
             color: "белый",
             size: 56,
@@ -45,7 +45,7 @@ const productData = [
             ogrn: 5167746237148,
             address: "129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34",
         },
-        discount: 200000,
+        discount: 1000,
         price: 11500.235,
         discountOnProduct: 300,
         discountPersonal: 30,
@@ -70,7 +70,7 @@ const productData = [
             address: "129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34",
         },
         quantity: 2,
-        discount: 456,
+        discount: 247,
         inStock: 2,
         price: 475,
         discountOnProduct: 300,
@@ -131,4 +131,9 @@ const cardData = [
         discription: "Маестро"
     },
 ]
+
+
+const selectedProducts = []
 localStorage.setItem("productData", JSON.stringify(productData))
+localStorage.setItem("selectedProducts", JSON.stringify(selectedProducts))
+localStorage.setItem("productDataInBasket",JSON.stringify(productData));

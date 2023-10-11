@@ -4,7 +4,7 @@
 @media screen and (width: 320px){
     .mobile-menu-content {
         display: flex;
-        height: 56px;
+        height: 58px;
         padding: 0 13px;
         justify-content: space-between;
         align-items: center;
