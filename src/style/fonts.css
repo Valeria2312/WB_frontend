@@ -1,0 +1,6 @@
+@font-face {
+    font-weight: 500;
+    font-family: SegoeUI;
+    src: url('../../assets/fonts/SegoeUI.woff') format("woff"),
+    url('../../assets/fonts/SegoeUI.ttf') format("ttf")
+}

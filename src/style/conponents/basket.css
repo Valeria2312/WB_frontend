@@ -1,0 +1,221 @@
+.basket {
+    display: flex;
+    padding: 0 24px 27px 24px;
+    gap: 30px;
+    background-color: var(--background-smoky);
+}
+.basket-content {
+    width: 892px;
+    padding-top: 12px;
+}
+.basket-order {
+    font-size: 16px;
+    line-height: 22px;
+}
+.basket-header{
+    font-family: Segoe UI, serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.28px;
+    color: var(--text-black);
+    margin-bottom: 26px;
+    max-width: 892px;
+}
+.basket-items-active {
+    max-width: 892px;
+}
+.basket-items__checkbox {
+    display: flex;
+    border-bottom: 1px solid var(--rulers-rulers);
+    padding-bottom: 11px;
+}
+.basket-items {
+    margin-top: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.basket-items-mobile{
+    display: none;
+}
+.basket-items-mobile .basket-item {
+    display: none;
+}
+.realCheckbox{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+}
+.newCheckbox{
+    background: #fff;
+    border: 1px solid #d3d4dd;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+}
+.newCheckbox::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url("../../../assets/images/svg/checked.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform:scale(0);
+    transition: 0.2s ease-in;
+}
+.realCheckbox:checked + .newCheckbox::before {
+    transform: scale(1);
+}
+.checkbox-text{
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--text-black);
+    font-family: Segoe UI, serif;
+    font-weight: 400;
+    padding-left: 9px;
+
+    position: absolute;
+    top: 185px;
+}
+.accordion__icon {
+    width: 20px;
+    margin-left: auto;
+}
+.accordion__icon::before{
+    content: '−';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    border-color: #d3d4dd;
+    width: 12px;
+    height: 12px;
+    transform: rotate(135deg);
+    margin-top: 6px;
+    transition: margin .3s ease,transform .3s ease;
+}
+.basket-items.closed {
+    display: none;
+}
+.basket-items.closed .accordion__icon::before {
+    content: '+';
+    transform: rotate(-45deg);
+}
+@media screen and (max-width: 1169px){
+    .basket {
+        flex-direction: column;
+    }
+    .basket-content {
+        width: 100%;
+    }
+    .basket-content > * {
+        max-width: 100%;
+    }
+}
+@media screen and (width: 1024px){
+    .basket{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+        margin-right: 0;
+    }
+    .basket-content{
+        width: 66%;
+    }
+    .paymentNow .newCheckbox {
+        width: 22px;
+        height: 22px;
+    }
+
+}
+@media screen and (max-width: 1022px){
+    .basket {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 874px){
+    .basket-content {
+        width: 100%;
+    }
+    .basket {
+        flex-direction: column;
+    }
+    .basket-items-mobile .basket-item {
+        display: flex;
+    }
+}
+@media screen and (max-width: 535px){
+    .basket{
+        gap: 0;
+    }
+    .basket-items {
+        display: none;
+    }
+    .basket-items-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+    .basket {
+        flex-direction: column;
+        padding: 0 16px 16px;
+    }
+    .basket-content {
+        margin-top: -8px;
+        padding-top: 0;
+        width: 100%;
+    }
+    .basket-header {
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: -0.2px;
+        margin-bottom: 16px;
+    }
+    .basket-items__checkbox {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+    .checkbox-text {
+        width: 123px;
+        display: block;
+        padding-left: 32px;
+        position: absolute;
+        top: 146px;
+    }
+    .basket-item-img {
+    }
+    .basket-items-mobile .basket-item-photo {
+
+        margin-left: 0;
+    }
+    .basket-items-mobile .basket-item-photo img {
+        margin-left: 0;
+        width: 80px;
+        height: auto;
+    }
+    .newCheckbox {
+        width: 21px;
+
+    }
+    .newCheckbox::before {
+        bottom: -1px;
+    }
+}
+@media screen and (max-width: 320px){
+    .checkbox-text {
+        top: 115px;
+    }
+    .basket-content > * {
+        max-width: 318px;
+    }
+}

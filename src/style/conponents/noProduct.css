@@ -1,0 +1,169 @@
+.basket-items-noProduct {
+    margin-top: 17px;
+    max-width: 892px;
+}
+.basket-items-noProduct .basket-item-photo {
+    margin-left: 0;
+    width: 72px;
+}
+.basket-item-photo img {
+    width: 100%;
+    width: 72px;
+}
+.basket-items-mobile-noProduct {
+    display: none;
+}
+.basket-items-noProduct__checkbox {
+    display: flex;
+    padding-top: 16px;
+    border-bottom: 1px solid var(--rulers-rulers);
+    padding-bottom: 15px;
+}
+.basket-items-noProduct__checkbox .accordion__icon {
+    margin-top: 5px;
+}
+.basket-item-noProduct{
+    color: var(--system-gray);
+    max-width: 766px;
+}
+.basket-items-noProduct-title {
+    letter-spacing: 0.2px;
+}
+.basket-items-noProduct .basket-item-description {
+    width: 309px;
+    max-width: 309px;
+}
+.basket-items-noProduct.closed {
+    display: none;
+}
+.basket-items-noProduct.closed .accordion__icon::before {
+    content: '+';
+    transform: rotate(-45deg);
+}
+@media screen and (max-width: 883px){
+    .basket-item-noProduct .basket-item-opportunities {
+        padding-left: 0;
+    }
+}
+@media screen and (max-width: 535px){
+    .basket-item-noProduct {
+        display: none;
+    }
+    .basket-items-mobile-noProduct {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--system-gray);
+        display: flex;
+        flex-direction: column;
+    }
+    .basket-items-mobile-noProduct .basket-item-description {
+        position: relative;
+    }
+    .basket-items-mobile-noProduct .basket-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .basket-items-mobile-noProduct .basket-item-opportunities {
+        margin-right: -11px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-quality {
+        margin-top: 10px;
+    }
+
+    .basket-items-noProduct__checkbox {
+        padding-top: 20px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item {
+        padding-top: 11px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-description {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        gap: 15px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-functions {
+        justify-content: flex-end;
+    }
+
+    .basket-item-image {
+        width: 80px;
+        height: 106px;
+        margin-top: 0;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-opportunities {
+        gap: 28px;
+        margin-top: 1px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-subdescription {
+        width: 187px;
+    }
+}
+@media screen and (width: 320px) {
+    .basket-items-noProduct {
+        margin-top: 12px;
+    }
+    .basket-items-mobile-noProduct {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--system-gray);
+        display: flex;
+        flex-direction: column;
+    }
+    .basket-items-mobile-noProduct .basket-item-description {
+        position: relative;
+    }
+    .basket-items-mobile-noProduct .basket-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .basket-items-mobile-noProduct .basket-item-opportunities {
+        margin-right: -11px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-quality {
+        margin-top: 10px;
+    }
+
+    .basket-items-noProduct__checkbox {
+        padding-top: 20px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item {
+        padding-top: 11px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-description {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        gap: 15px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-functions {
+        justify-content: flex-end;
+    }
+
+    .basket-item-image {
+        width: 80px;
+        height: 106px;
+        margin-top: 0;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-opportunities {
+        gap: 28px;
+        margin-top: 1px;
+    }
+
+    .basket-items-mobile-noProduct .basket-item-subdescription {
+        width: 187px;
+    }
+}
