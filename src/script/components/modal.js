@@ -76,9 +76,9 @@ btnClose.addEventListener("click", () => closePayModal(modal));
 btnModal.addEventListener("click", () => setData());
 let activeItem;
 
-function changeRadiobuttons() {
-    const radiobuttons = document.querySelectorAll(".overlay-modal .card-item");
-    radiobuttons.forEach((item) => {
+function changeRadioButtons() {
+    const radioButtons = document.querySelectorAll(".overlay-modal .card-item");
+    radioButtons.forEach((item) => {
         item.addEventListener("click", function () {
             let currentItem = item.querySelector("input");
             currentItem.checked = true;
@@ -96,7 +96,7 @@ function openPayModal(modal, renderCards, buttonsDelivery) {
     } else {
         modalContent.innerHTML = renderCards;
     }
-    changeRadiobuttons()
+    changeRadioButtons()
 }
 function closePayModal(modal) {
     modal.style.opacity = "0";
@@ -139,28 +139,43 @@ function setData() {
     if(activeItem) {
         if(activeItem.name === "address") {
             localStorage.setItem("currentAddress", activeItem.value)
+            getCurrentAddress()
         }
         if(activeItem.name === "card") {
-            localStorage.setItem("currentCard", activeItem.value)
+            const activeItemImg = {}
+            activeItemImg.name = activeItem.nextElementSibling.querySelector('img').getAttribute("alt")
+            activeItemImg.card = activeItem.value
+
+            localStorage.setItem("currentCard", JSON.stringify(activeItemImg))
+            getCurrentCard()
         }
         closePayModal(modal)
-        getCurrentAddress()
+
     }
 }
-let methodDelivery = "";
-let methodDeliveryInOrder = "";
 
 let getCurrentAddress = () => {
-    const deliveryInOrder =  document.querySelector(".point-issue")
-    const deliveryContent = document.querySelector(".order-delivery-details-address")
+    const deliveryInOrder =  document.querySelectorAll(".point-issue-text")
     const currentAddress = localStorage.getItem("currentAddress");
 
-        methodDelivery += `<span class="point-issue-text">${currentAddress}</span>`
-        methodDeliveryInOrder += `<span class="point-issue-title">Пункт выдачи</span>
-            <span class="point-issue-text">${currentAddress}<span class="point-issue-subText"><img
-                class="point-issue-img" src="assets/images/svg/star.svg"
-                alt="звезда">${deliveryData[0].rating} ${deliveryData[0].workSchedule}</span></span>`
+    deliveryInOrder.forEach((item) => {
+        item.textContent = currentAddress;
+    })
+}
+const getCurrentCard = () => {
+    const payment =  document.querySelectorAll(".payment-description")
+    const activeItemImg = JSON.parse(localStorage.getItem("currentCard"));
+    let currentCard;
 
-        deliveryInOrder.innerHTML = methodDeliveryInOrder;
-        deliveryContent.innerHTML  = methodDelivery;
+    cardData.forEach(card => {
+        if(card.discription === activeItemImg.name) {
+            console.log(card)
+            currentCard = card
+        }
+    })
+
+    payment.forEach((item) => {
+        item.querySelector('img').src = currentCard.img;
+        item.querySelector("span").textContent = currentCard.number;
+    })
 }
